@@ -46,6 +46,30 @@ const Navbar = () => {
         },
     };
 
+    const listVariants = {
+        closed: {
+            x: '100vw',
+        },
+        opened: {
+            x: 0,
+            transition: {
+                when: 'beforeChildren',
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const listItemVariants = {
+        closed: {
+            x: 10,
+            opacity: 0,
+        },
+        opened: {
+            x: 0,
+            opacity: 1,
+        },
+    };
+
     return (
         <div className='h-full flex justify-between items-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl'>
             {/* Links */}
@@ -113,13 +137,21 @@ const Navbar = () => {
 
                 {/* Menu List */}
                 {open && (
-                    <div className='absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40'>
+                    <motion.div
+                        variants={listVariants}
+                        initial='closed'
+                        animate='opened'
+                        className='absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40'
+                    >
                         {links.map(link => (
-                            <Link href={link.url} key={link.title}>
-                                {link.title}
-                            </Link>
+                            <motion.div
+                                variants={listItemVariants}
+                                key={link.title}
+                            >
+                                <Link href={link.url}>{link.title}</Link>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 )}
             </div>
         </div>
