@@ -181,7 +181,7 @@ const Booking = () => {
     const formatPrice = value => `RM${value}`;
 
     return (
-        <div className='w-full max-w-3xl mx-auto bg-white rounded-lg shadow-lg'>
+        <div className='w-full max-w-3xl mx-auto bg-white rounded-lg shadow-lg mt-20'>
             {/* Header */}
             <div className='p-6 bg-yellow-200'>
                 <div className='flex space-x-6 mb-4 border-b pb-4'>

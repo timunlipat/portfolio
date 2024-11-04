@@ -9,7 +9,8 @@ const links = [
     { url: '/', title: 'Home' },
     { url: '/about', title: 'About' },
     { url: '/portfolio', title: 'Portfolio' },
-    { url: '/contact', title: 'Contact' },
+    // { url: '/contact', title: 'Contact' },
+    { url: '/booking', title: 'Booking' },
 ];
 
 const Navbar = () => {
@@ -63,9 +64,9 @@ const Navbar = () => {
                     className='w-10 h-8 flex flex-col justify-between z-50 relative'
                     onClick={() => setOpen(!open)}
                 >
-                    <div className='w-10 h-1 bg-white rounded'></div>
-                    <div className='w-10 h-1 bg-white rounded'></div>
-                    <div className='w-10 h-1 bg-white rounded'></div>
+                    <div className='w-10 h-1 bg-black rounded'></div>
+                    <div className='w-10 h-1 bg-black rounded'></div>
+                    <div className='w-10 h-1 bg-black rounded'></div>
                 </button>
 
                 {/* Menu List */}
