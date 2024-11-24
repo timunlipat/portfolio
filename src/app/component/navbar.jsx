@@ -10,8 +10,7 @@ const links = [
     { url: '/', title: 'Home' },
     { url: '/about', title: 'About' },
     { url: '/portfolio', title: 'Portfolio' },
-    // { url: '/contact', title: 'Contact' },
-    { url: '/booking', title: 'Booking' },
+    { url: '/contact', title: 'Contact' },
 ];
 
 const Navbar = () => {
