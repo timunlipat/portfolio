@@ -63,7 +63,44 @@ const About = () => {
                         {/* Skill Title */}
                         <h1 className='font-bold text-2xl'>SKILLS</h1>
                         {/* SKILL LIST */}
-                        <div className=''></div>
+                        <div className='flex gap-4 flex-wrap'>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                JavaScript
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                TypeScript
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                React.js
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                Next.js
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                Tailwind CSS
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                MongoDB
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                PostgreSQL
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                Node.js
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                Express.js
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                Redux
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                Freamer Motion
+                            </div>
+                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
+                                Webpack
+                            </div>
+                        </div>
                         {/* SKILL Scroll SVG */}
                         <div className='w-6 h-6 mx-auto mt-8 animate-bounce text-gray-500'>
                             <svg
