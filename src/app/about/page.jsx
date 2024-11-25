@@ -32,7 +32,7 @@ const About = () => {
                         <span className='italic'>
                             Time waits for no man. Unless that man is me.
                         </span>
-                        {/* Biography Sign */}
+                        {/* Biography Sign SVG*/}
                         <div className='self-end'>
                             <Image
                                 src='/signature-chuck.png'
@@ -41,10 +41,46 @@ const About = () => {
                                 width={185}
                             />
                         </div>
-                        {/* Biography Scroll */}
+                        {/* Biography Scroll SVG */}
+                        <div className='w-6 h-6 mx-auto mt-8 animate-bounce text-gray-500'>
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                viewBox='0 0 24 24'
+                            >
+                                <path
+                                    d='M12 4 L12 16 M7 12 L12 17 L17 12'
+                                    stroke='currentColor'
+                                    strokeWidth='2'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    fill='none'
+                                />
+                            </svg>
+                        </div>
                     </div>
                     {/* Skills Container */}
-                    <div className=''>SKILLS</div>
+                    <div className='flex flex-col gap-12 justify-center'>
+                        {/* Skill Title */}
+                        <h1 className='font-bold text-2xl'>SKILLS</h1>
+                        {/* SKILL LIST */}
+                        <div className=''></div>
+                        {/* SKILL Scroll SVG */}
+                        <div className='w-6 h-6 mx-auto mt-8 animate-bounce text-gray-500'>
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                viewBox='0 0 24 24'
+                            >
+                                <path
+                                    d='M12 4 L12 16 M7 12 L12 17 L17 12'
+                                    stroke='currentColor'
+                                    strokeWidth='2'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    fill='none'
+                                />
+                            </svg>
+                        </div>
+                    </div>
                     {/* Experience Container */}
                     <div className=''>EXPERIENCE</div>
                 </div>
