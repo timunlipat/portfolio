@@ -119,7 +119,96 @@ const About = () => {
                         </div>
                     </div>
                     {/* Experience Container */}
-                    <div className=''>EXPERIENCE</div>
+                    <div className='flex flex-col gap-12 justify-center pb-48'>
+                        {/* Experience Title */}
+                        <h1 className='font-bold text-2xl'>EXPERIENCE</h1>
+                        {/* Experience LIST */}
+                        <div className=''>
+                            {/* Experience List Item */}
+                            <div className=''>
+                                {/* Left */}
+                                <div className=''>
+                                    {/* Job Title */}
+                                    <div className=''>Software Engineer</div>
+                                    {/* Job Description */}
+                                    <div className=''>
+                                        My current employment. Way better than
+                                        the position before!
+                                    </div>
+                                    {/* Job Date */}
+                                    <div className=''>2024 - Present</div>
+                                    {/* Job Company */}
+                                    <div className=''>Apple</div>
+                                </div>
+                                {/* Center */}
+                                <div className=''>
+                                    {/* Line */}
+                                    <div className=''>
+                                        {/* Line Circle */}
+                                        <div className=''></div>
+                                    </div>
+                                </div>
+                                {/* Right */}
+                                <div className=''></div>
+                            </div>
+
+                            {/* Experience List Item */}
+                            <div className=''>
+                                {/* Left */}
+
+                                {/* Center */}
+                                <div className=''>
+                                    {/* Line */}
+                                    <div className=''>
+                                        {/* Line Circle */}
+                                        <div className=''></div>
+                                    </div>
+                                </div>
+                                {/* Right */}
+                                <div className=''>
+                                    {/* Job Title */}
+                                    <div className=''>Software Engineer</div>
+                                    {/* Job Description */}
+                                    <div className=''>
+                                        My current employment. Way better than
+                                        the position before!
+                                    </div>
+                                    {/* Job Date */}
+                                    <div className=''>2024 - Present</div>
+                                    {/* Job Company */}
+                                    <div className=''>Apple</div>
+                                </div>
+                            </div>
+
+                            {/* Experience List Item */}
+                            <div className=''>
+                                {/* Left */}
+                                <div className=''>
+                                    {/* Job Title */}
+                                    <div className=''>Software Engineer</div>
+                                    {/* Job Description */}
+                                    <div className=''>
+                                        My current employment. Way better than
+                                        the position before!
+                                    </div>
+                                    {/* Job Date */}
+                                    <div className=''>2024 - Present</div>
+                                    {/* Job Company */}
+                                    <div className=''>Apple</div>
+                                </div>
+                                {/* Center */}
+                                <div className=''>
+                                    {/* Line */}
+                                    <div className=''>
+                                        {/* Line Circle */}
+                                        <div className=''></div>
+                                    </div>
+                                </div>
+                                {/* Right */}
+                                <div className=''></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {/* SVG Container */}
                 <div className='hidden'></div>
