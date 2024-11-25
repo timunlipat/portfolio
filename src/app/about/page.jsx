@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Brain from '../components/brain';
 
 const About = () => {
     return (
@@ -13,7 +14,7 @@ const About = () => {
             {/* Container */}
             <div className='h-full overflow-scroll lg:flex'>
                 {/* Text Container */}
-                <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64'>
+                <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:1/2'>
                     {/* Biography Container */}
                     <div className='flex flex-col gap-12 justify-center'>
                         {/* Biography Title */}
@@ -229,7 +230,9 @@ const About = () => {
                     </div>
                 </div>
                 {/* SVG Container */}
-                <div className='hidden'></div>
+                <div className='hidden lg:black w-1/3 xl:1/2'>
+                    {/* <Brain /> */}
+                </div>
             </div>
         </motion.div>
     );
