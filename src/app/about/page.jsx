@@ -230,8 +230,8 @@ const About = () => {
                     </div>
                 </div>
                 {/* SVG Container */}
-                <div className='hidden lg:black w-1/3 xl:1/2'>
-                    {/* <Brain /> */}
+                <div className=' w-1/3 xl:1/2'>
+                    <Brain />
                 </div>
             </div>
         </motion.div>
