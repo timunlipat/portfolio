@@ -263,6 +263,40 @@ const About = () => {
                                 {/* Right */}
                                 <div className='w-1/3'></div>
                             </div>
+
+                            {/* Experience List Item */}
+                            <div className='flex justify-between h-48'>
+                                {/* Left */}
+                                <div className='w-1/3'></div>
+                                {/* Center */}
+                                <div className='w-1/6'>
+                                    {/* Line */}
+                                    <div className='w-1 h-full bg-gray-600 rounded relative'>
+                                        {/* Line Circle */}
+                                        <div className='absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2'></div>
+                                    </div>
+                                </div>
+                                {/* Right */}
+                                <div className='w-1/3'>
+                                    {/* Job Title */}
+                                    <div className='bg-white p-3 font-semibold rounded-lg'>
+                                        Software Engineer
+                                    </div>
+                                    {/* Job Description */}
+                                    <div className='p-3 text-sm italic'>
+                                        My current employment. Way better than
+                                        the position before!
+                                    </div>
+                                    {/* Job Date */}
+                                    <div className='p-3 text-red-400 text-sm font-semibold'>
+                                        2024 - Present
+                                    </div>
+                                    {/* Job Company */}
+                                    <div className='p-1 rounded bg-white text-sm font-semibold w-fit'>
+                                        Apple
+                                    </div>
+                                </div>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
