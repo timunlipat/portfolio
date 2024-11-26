@@ -1,5 +1,5 @@
 'use client';
-import { motion, useScroll } from 'framer-motion';
+import { motion, useInView, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 import Brain from '../components/brain';
@@ -7,6 +7,12 @@ import Brain from '../components/brain';
 const About = () => {
     const containerRef = useRef();
     const { scrollYProgress } = useScroll({ container: containerRef });
+    const skillRef = useRef();
+    const isSkillRefinView = useInView(skillRef, { margin: '-100px' });
+    const expereienceRef = useRef();
+    const isExpereienceRefInView = useInView(expereienceRef, {
+        margin: '-100px',
+    });
 
     return (
         <motion.div
@@ -64,11 +70,25 @@ const About = () => {
                         </div>
                     </div>
                     {/* Skills Container */}
-                    <div className='flex flex-col gap-12 justify-center'>
+                    <div
+                        className='flex flex-col gap-12 justify-center'
+                        ref={skillRef}
+                    >
                         {/* Skill Title */}
-                        <h1 className='font-bold text-2xl'>SKILLS</h1>
+                        <motion.h1
+                            initial={{ x: '-300px' }}
+                            animate={isSkillRefinView ? { x: 0 } : {}}
+                            transition={{ delay: 0.2 }}
+                            className='font-bold text-2xl'
+                        >
+                            SKILLS
+                        </motion.h1>
                         {/* SKILL LIST */}
-                        <div className='flex gap-4 flex-wrap'>
+                        <motion.div
+                            initial={{ x: '-300px' }}
+                            animate={isSkillRefinView ? { x: 0 } : {}}
+                            className='flex gap-4 flex-wrap'
+                        >
                             <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
                                 JavaScript
                             </div>
@@ -105,7 +125,7 @@ const About = () => {
                             <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
                                 Webpack
                             </div>
-                        </div>
+                        </motion.div>
                         {/* SKILL Scroll SVG */}
                         <div className='w-6 h-6 mx-auto mt-8 animate-bounce text-gray-500'>
                             <svg
@@ -124,11 +144,24 @@ const About = () => {
                         </div>
                     </div>
                     {/* Experience Container */}
-                    <div className='flex flex-col gap-12 justify-center pb-48'>
+                    <div
+                        className='flex flex-col gap-12 justify-center pb-48'
+                        ref={expereienceRef}
+                    >
                         {/* Experience Title */}
-                        <h1 className='font-bold text-2xl'>EXPERIENCE</h1>
+                        <motion.h1
+                            initial={{ x: '-300px' }}
+                            animate={isExpereienceRefInView ? { x: 0 } : {}}
+                            transition={{ delay: 0.2 }}
+                            className='font-bold text-2xl'
+                        >
+                            EXPERIENCE
+                        </motion.h1>
                         {/* Experience LIST */}
-                        <div className=''>
+                        <motion.div
+                            initial={{ x: '-300px' }}
+                            animate={isExpereienceRefInView ? { x: 0 } : {}}
+                        >
                             {/* Experience List Item */}
                             <div className='flex justify-between h-48'>
                                 {/* Left */}
@@ -230,7 +263,7 @@ const About = () => {
                                 {/* Right */}
                                 <div className='w-1/3'></div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
                 {/* SVG Container */}
