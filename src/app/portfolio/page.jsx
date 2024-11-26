@@ -112,7 +112,32 @@ const PortfolioPage = () => {
                                         href={item.link}
                                         className='flex justify-end'
                                     >
-                                        <button className='p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded'>
+                                        <button
+                                            className='
+                                                bg-white
+                                                hover:bg-opacity-95
+                                                text-purple-800
+                                                font-medium
+                                                px-6
+                                                py-3
+                                                rounded-lg
+                                                transition-all
+                                                duration-200
+                                                shadow-lg
+                                                hover:shadow-xl
+                                                transform
+                                                hover:-translate-y-0.5
+                                                flex
+                                                items-center
+                                                justify-center
+                                                space-x-2
+                                                w-auto
+                                                min-w-[120px]
+                                                backdrop-blur-sm
+                                                border
+                                                border-white/20
+                                            '
+                                        >
                                             See Demo
                                         </button>
                                     </Link>
