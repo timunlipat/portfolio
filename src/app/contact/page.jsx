@@ -57,7 +57,7 @@ const ContactPage = () => {
                         transition={{ delay: 0.3 }}
                     >
                         <span className='inline-block px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4'>
-                            Let's Work Together
+                            Let&aposs Work Together
                         </span>
                         <h1 className='text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 pb-4'>
                             Transform Your Ideas Into Reality

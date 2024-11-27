@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 
 const items = [
@@ -135,7 +135,6 @@ const PortfolioPage = () => {
                                             </p>
 
                                             <div className='flex gap-4 mt-auto'>
-                                                {/* <Link href={item.github}> */}
                                                 <motion.button
                                                     className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-lg'
                                                     whileHover={{
@@ -148,8 +147,6 @@ const PortfolioPage = () => {
                                                     <Github className='w-5 h-5' />
                                                     View Code
                                                 </motion.button>
-                                                {/* </Link> */}
-                                                {/* <Link href={item.link}> */}
                                                 <motion.button
                                                     className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors shadow-lg'
                                                     whileHover={{
@@ -162,7 +159,6 @@ const PortfolioPage = () => {
                                                     <ExternalLink className='w-5 h-5' />
                                                     Live Demo
                                                 </motion.button>
-                                                {/* </Link> */}
                                             </div>
                                         </div>
                                     </div>
@@ -211,7 +207,7 @@ const PortfolioPage = () => {
                                 x1='0%'
                                 y1='0%'
                                 x2='100%'
-                                y2='0%'
+                                y2='100%'
                             >
                                 <stop offset='0%' stopColor='#818cf8' />
                                 <stop offset='100%' stopColor='#8b5cf6' />
@@ -236,7 +232,7 @@ const PortfolioPage = () => {
                                 transition={{ duration: 0.2 }}
                             >
                                 <span className='text-white font-medium text-lg md:text-xl'>
-                                    Let's Talk
+                                    Let&apos;s Talk
                                 </span>
                                 <motion.div
                                     className='absolute inset-0 bg-white rounded-full'
