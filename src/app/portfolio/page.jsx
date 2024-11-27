@@ -3,39 +3,48 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
+import { ExternalLink, Github } from 'lucide-react';
 
 const items = [
     {
         id: 1,
         color: 'from-red-300 to-blue-300',
         title: 'React Commerce',
+        tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
         img: 'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
         link: '',
+        github: '',
     },
     {
         id: 2,
         color: 'from-blue-300 to-violet-300',
         title: 'Next.js Medium Blog',
+        tech: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
         img: 'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
         link: '',
+        github: '',
     },
     {
         id: 3,
         color: 'from-violet-300 to-purple-300',
         title: 'Vanilla Book App',
+        tech: ['JavaScript', 'Firebase', 'CSS3'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
         img: 'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
         link: '',
+        github: '',
     },
     {
         id: 4,
         color: 'from-purple-300 to-red-300',
         title: 'Spotify Music App',
+        tech: ['React', 'Redux', 'Web Audio API'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
         img: 'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         link: '',
+        github: '',
     },
 ];
 
@@ -90,35 +99,65 @@ const PortfolioPage = () => {
                                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                                 key={item.id}
                             >
-                                <div className='flex flex-col gap-8 text-white'>
-                                    <h1 className='py-2 text-xl md:text-4xl lg:text-6xl xl:text-8xl font-bold bg-gradient-to-r from-purple-900 via-purple-700 to-pink-800 text-transparent bg-clip-text tracking-tight drop-shadow-sm hover:scale-[1.02] transition-transform duration-300'>
+                                <div className='flex flex-col gap-8 max-w-5xl px-6'>
+                                    <h1 className='text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text py-2'>
                                         {item.title}
                                     </h1>
 
-                                    <div className='relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]'>
-                                        <Image
-                                            src={item.img}
-                                            alt={`${item.title} preview`}
-                                            fill
-                                            sizes='(max-width: 768px) 80vw,
-                                                   (max-width: 1024px) 96vw,
-                                                   (max-width: 1280px) 500px,
-                                                   600px'
-                                            className='object-cover'
-                                            priority={item.id === 1}
-                                        />
+                                    <div className='relative rounded-xl overflow-hidden shadow-2xl group'>
+                                        <div className='w-full h-[60vh] relative'>
+                                            <Image
+                                                src={item.img}
+                                                alt={`${item.title} preview`}
+                                                fill
+                                                className='object-cover object-center'
+                                                priority={item.id === 1}
+                                            />
+                                        </div>
+                                        <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'>
+                                            <div className='absolute bottom-0 left-0 right-0 p-6'>
+                                                <div className='flex flex-wrap gap-3 mb-4'>
+                                                    {item.tech.map(
+                                                        (tech, index) => (
+                                                            <span
+                                                                key={index}
+                                                                className='px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800'
+                                                            >
+                                                                {tech}
+                                                            </span>
+                                                        )
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p className='w-80 md:w-96 lg:w-[500px] xl:w-[600px] text-base lg:text-lg leading-relaxed text-gray-800/90 font-normal tracking-wide mt-4'>
+
+                                    <p className='text-lg text-gray-800/90 leading-relaxed'>
                                         {item.desc}
                                     </p>
-                                    <Link
-                                        href={item.link}
-                                        className='flex justify-end'
-                                    >
-                                        <button className='bg-white hover:bg-opacity-95 text-purple-800 font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 w-auto min-w-[120px] backdrop-blur-sm border border-white/20'>
-                                            See Demo
-                                        </button>
-                                    </Link>
+
+                                    <div className='flex gap-4 justify-end'>
+                                        <Link href={item.github}>
+                                            <motion.button
+                                                className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors'
+                                                whileHover={{ scale: 1.02 }}
+                                                whileTap={{ scale: 0.98 }}
+                                            >
+                                                <Github className='w-5 h-5' />
+                                                Code
+                                            </motion.button>
+                                        </Link>
+                                        <Link href={item.link}>
+                                            <motion.button
+                                                className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors'
+                                                whileHover={{ scale: 1.02 }}
+                                                whileTap={{ scale: 0.98 }}
+                                            >
+                                                <ExternalLink className='w-5 h-5' />
+                                                Live Demo
+                                            </motion.button>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         ))}
