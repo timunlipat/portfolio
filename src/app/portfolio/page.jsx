@@ -19,7 +19,7 @@ const items = [
     {
         id: 2,
         color: 'from-blue-300 to-violet-300',
-        title: 'Next.js Medium Blog',
+        title: 'React Blog',
         tech: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
         img: 'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
