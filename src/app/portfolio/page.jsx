@@ -167,34 +167,34 @@ const PortfolioPage = () => {
                                     </p>
 
                                     <div className='flex gap-4 justify-end relative z-10'>
-                                        <Link href={item.github}>
-                                            <motion.button
-                                                className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors'
-                                                whileHover={{ scale: 1.02 }}
-                                                whileTap={{ scale: 0.98 }}
-                                                transition={{
-                                                    duration: 0.2,
-                                                    ease: 'easeOut',
-                                                }}
-                                            >
-                                                <Github className='w-5 h-5' />
-                                                Code
-                                            </motion.button>
-                                        </Link>
-                                        <Link href={item.link}>
-                                            <motion.button
-                                                className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors'
-                                                whileHover={{ scale: 1.02 }}
-                                                whileTap={{ scale: 0.98 }}
-                                                transition={{
-                                                    duration: 0.2,
-                                                    ease: 'easeOut',
-                                                }}
-                                            >
-                                                <ExternalLink className='w-5 h-5' />
-                                                Live Demo
-                                            </motion.button>
-                                        </Link>
+                                        {/* <Link href={item.github}> */}
+                                        <motion.button
+                                            className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors'
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            transition={{
+                                                duration: 0.2,
+                                                ease: 'easeOut',
+                                            }}
+                                        >
+                                            <Github className='w-5 h-5' />
+                                            Code
+                                        </motion.button>
+                                        {/* </Link> */}
+                                        {/* <Link href={item.link}> */}
+                                        <motion.button
+                                            className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors'
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            transition={{
+                                                duration: 0.2,
+                                                ease: 'easeOut',
+                                            }}
+                                        >
+                                            <ExternalLink className='w-5 h-5' />
+                                            Live Demo
+                                        </motion.button>
+                                        {/* </Link> */}
                                     </div>
                                 </div>
                             </div>
