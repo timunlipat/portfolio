@@ -11,7 +11,7 @@ const items = [
         color: 'from-red-300 to-blue-300',
         title: 'React Commerce',
         tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
         img: 'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
         link: '',
         github: '',
@@ -21,7 +21,7 @@ const items = [
         color: 'from-blue-300 to-violet-300',
         title: 'Next.js Medium Blog',
         tech: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma'],
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
         img: 'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
         link: '',
         github: '',
@@ -31,7 +31,7 @@ const items = [
         color: 'from-violet-300 to-purple-300',
         title: 'Vanilla Book App',
         tech: ['JavaScript', 'Firebase', 'CSS3'],
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
         img: 'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
         link: '',
         github: '',
@@ -41,7 +41,7 @@ const items = [
         color: 'from-purple-300 to-red-300',
         title: 'Music App',
         tech: ['React', 'Redux', 'Web Audio API'],
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
         img: 'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         link: '',
         github: '',
@@ -50,27 +50,8 @@ const items = [
 
 const PortfolioPage = () => {
     const ref = useRef();
-    const [isHovered, setIsHovered] = useState(false);
-    const [isScrolling, setIsScrolling] = useState(false);
-
     const { scrollYProgress } = useScroll({ target: ref });
     const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']);
-
-    // Handle scroll state
-    useEffect(() => {
-        let timeout;
-        const handleScroll = () => {
-            setIsScrolling(true);
-            clearTimeout(timeout);
-            timeout = setTimeout(() => setIsScrolling(false), 150);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            clearTimeout(timeout);
-        };
-    }, []);
 
     const circleVariants = {
         animate: {
@@ -116,79 +97,62 @@ const PortfolioPage = () => {
                                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                                 key={item.id}
                             >
-                                <div className='flex flex-col gap-8 w-full py-4 px-6 md:px-8'>
-                                    <h1 className='text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-[1.1] sm:leading-tight tracking-tight sm:tracking-normal py-2'>
+                                <div className='flex flex-col gap-6 w-full max-w-6xl mx-auto px-6 md:px-8'>
+                                    <h1 className='text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-tight tracking-tight py-2'>
                                         {item.title}
                                     </h1>
 
-                                    <div className='w-full relative rounded-xl overflow-hidden shadow-2xl group'>
-                                        <div className='w-full h-[60vh] relative pointer-events-none'>
+                                    <div className='grid md:grid-cols-2 gap-8 items-start'>
+                                        <div className='relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl group'>
                                             <Image
                                                 src={item.img}
                                                 alt={`${item.title} preview`}
                                                 fill
-                                                className='object-cover object-center'
+                                                className='object-cover object-center transform group-hover:scale-105 transition-transform duration-700'
                                                 priority={item.id === 1}
                                             />
-                                        </div>
-                                        <div
-                                            className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-auto'
-                                            style={{
-                                                zIndex: 1,
-                                                transitionTimingFunction:
-                                                    'cubic-bezier(0.4, 0, 0.2, 1)',
-                                            }}
-                                        >
-                                            <div className='absolute bottom-0 left-0 right-0 p-6'>
-                                                <div className='flex flex-wrap gap-3 mb-4'>
-                                                    {item.tech.map(
-                                                        (tech, index) => (
-                                                            <span
-                                                                key={index}
-                                                                className='px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800'
-                                                            >
-                                                                {tech}
-                                                            </span>
-                                                        )
-                                                    )}
+                                            <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'>
+                                                <div className='absolute bottom-0 left-0 right-0 p-6'>
+                                                    <div className='flex flex-wrap gap-2'>
+                                                        {item.tech.map(
+                                                            (tech, index) => (
+                                                                <span
+                                                                    key={index}
+                                                                    className='px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800 shadow-sm'
+                                                                >
+                                                                    {tech}
+                                                                </span>
+                                                            )
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <p className='w-full text-lg text-gray-800/90 leading-relaxed'>
-                                        {item.desc}
-                                    </p>
+                                        <div className='flex flex-col gap-6'>
+                                            <p className='text-lg text-gray-800/90 leading-relaxed'>
+                                                {item.desc}
+                                            </p>
 
-                                    <div className='flex gap-4 justify-end relative z-10'>
-                                        {/* <Link href={item.github}> */}
-                                        <motion.button
-                                            className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors'
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.98 }}
-                                            transition={{
-                                                duration: 0.2,
-                                                ease: 'easeOut',
-                                            }}
-                                        >
-                                            <Github className='w-5 h-5' />
-                                            Code
-                                        </motion.button>
-                                        {/* </Link> */}
-                                        {/* <Link href={item.link}> */}
-                                        <motion.button
-                                            className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors'
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.98 }}
-                                            transition={{
-                                                duration: 0.2,
-                                                ease: 'easeOut',
-                                            }}
-                                        >
-                                            <ExternalLink className='w-5 h-5' />
-                                            Live Demo
-                                        </motion.button>
-                                        {/* </Link> */}
+                                            <div className='flex gap-4 mt-auto'>
+                                                <motion.button
+                                                    className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-lg'
+                                                    whileHover={{ scale: 1.02 }}
+                                                    whileTap={{ scale: 0.98 }}
+                                                >
+                                                    <Github className='w-5 h-5' />
+                                                    View Code
+                                                </motion.button>
+                                                <motion.button
+                                                    className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors shadow-lg'
+                                                    whileHover={{ scale: 1.02 }}
+                                                    whileTap={{ scale: 0.98 }}
+                                                >
+                                                    <ExternalLink className='w-5 h-5' />
+                                                    Live Demo
+                                                </motion.button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -196,6 +160,7 @@ const PortfolioPage = () => {
                     </motion.div>
                 </div>
             </div>
+
             <div className='w-screen h-screen bg-gradient-to-br from-indigo-50 to-purple-50 flex flex-col gap-16 items-center justify-center text-center'>
                 <h1 className='text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 pb-10'>
                     Ready to Build Something Amazing?
@@ -254,11 +219,9 @@ const PortfolioPage = () => {
                     <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                         <Link href='/contact'>
                             <motion.div
-                                className='w-20 h-20 md:w-32 md:h-32 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center group relative z-10'
-                                whileHover={{
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                }}
-                                transition={{ duration: 0.2, ease: 'easeOut' }}
+                                className='w-20 h-20 md:w-32 md:h-32 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center group relative z-10 shadow-lg'
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.2 }}
                             >
                                 <span className='text-white font-medium text-lg md:text-xl'>
                                     Let's Talk
@@ -267,10 +230,7 @@ const PortfolioPage = () => {
                                     className='absolute inset-0 bg-white rounded-full'
                                     initial={{ opacity: 0 }}
                                     whileHover={{ opacity: 0.1 }}
-                                    transition={{
-                                        duration: 0.2,
-                                        ease: 'easeOut',
-                                    }}
+                                    transition={{ duration: 0.2 }}
                                 />
                             </motion.div>
                         </Link>
