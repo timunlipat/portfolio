@@ -77,8 +77,10 @@ const PortfolioPage = () => {
             transition={{ duration: 1 }}
         >
             <div className='h-[600vh] relative' ref={ref}>
-                <div className='w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center'>
-                    My Works
+                <div className='w-screen h-[calc(100vh-6rem)] flex items-center justify-center'>
+                    <h1 className='text-7xl md:text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-transparent bg-clip-text'>
+                        Showcase
+                    </h1>
                 </div>
                 <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
                     <motion.div style={{ x }} className='flex'>
@@ -89,9 +91,10 @@ const PortfolioPage = () => {
                                 key={item.id}
                             >
                                 <div className='flex flex-col gap-8 text-white'>
-                                    <h1 className='text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl'>
+                                    <h1 className='py-2 text-xl md:text-4xl lg:text-6xl xl:text-8xl font-bold bg-gradient-to-r from-purple-900 via-purple-700 to-pink-800 text-transparent bg-clip-text tracking-tight drop-shadow-sm hover:scale-[1.02] transition-transform duration-300'>
                                         {item.title}
                                     </h1>
+
                                     <div className='relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]'>
                                         <Image
                                             src={item.img}
@@ -105,39 +108,14 @@ const PortfolioPage = () => {
                                             priority={item.id === 1}
                                         />
                                     </div>
-                                    <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
+                                    <p className='w-80 md:w-96 lg:w-[500px] xl:w-[600px] text-base lg:text-lg leading-relaxed text-gray-800/90 font-normal tracking-wide mt-4'>
                                         {item.desc}
                                     </p>
                                     <Link
                                         href={item.link}
                                         className='flex justify-end'
                                     >
-                                        <button
-                                            className='
-                                                bg-white
-                                                hover:bg-opacity-95
-                                                text-purple-800
-                                                font-medium
-                                                px-6
-                                                py-3
-                                                rounded-lg
-                                                transition-all
-                                                duration-200
-                                                shadow-lg
-                                                hover:shadow-xl
-                                                transform
-                                                hover:-translate-y-0.5
-                                                flex
-                                                items-center
-                                                justify-center
-                                                space-x-2
-                                                w-auto
-                                                min-w-[120px]
-                                                backdrop-blur-sm
-                                                border
-                                                border-white/20
-                                            '
-                                        >
+                                        <button className='bg-white hover:bg-opacity-95 text-purple-800 font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 w-auto min-w-[120px] backdrop-blur-sm border border-white/20'>
                                             See Demo
                                         </button>
                                     </Link>
