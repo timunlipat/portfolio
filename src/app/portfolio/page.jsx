@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 
 const items = [
@@ -51,9 +51,26 @@ const items = [
 const PortfolioPage = () => {
     const ref = useRef();
     const [isHovered, setIsHovered] = useState(false);
+    const [isScrolling, setIsScrolling] = useState(false);
 
     const { scrollYProgress } = useScroll({ target: ref });
     const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']);
+
+    // Handle scroll state
+    useEffect(() => {
+        let timeout;
+        const handleScroll = () => {
+            setIsScrolling(true);
+            clearTimeout(timeout);
+            timeout = setTimeout(() => setIsScrolling(false), 150);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            clearTimeout(timeout);
+        };
+    }, []);
 
     const circleVariants = {
         animate: {
@@ -104,8 +121,14 @@ const PortfolioPage = () => {
                                         {item.title}
                                     </h1>
 
-                                    <div className='relative rounded-xl overflow-hidden shadow-2xl group'>
-                                        <div className='w-full h-[60vh] relative'>
+                                    <div
+                                        className={`relative rounded-xl overflow-hidden shadow-2xl group ${
+                                            isScrolling
+                                                ? 'pointer-events-none'
+                                                : ''
+                                        }`}
+                                    >
+                                        <div className='w-full h-[60vh] relative pointer-events-none'>
                                             <Image
                                                 src={item.img}
                                                 alt={`${item.title} preview`}
@@ -114,7 +137,14 @@ const PortfolioPage = () => {
                                                 priority={item.id === 1}
                                             />
                                         </div>
-                                        <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'>
+                                        <div
+                                            className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-auto'
+                                            style={{
+                                                zIndex: 1,
+                                                transitionTimingFunction:
+                                                    'cubic-bezier(0.4, 0, 0.2, 1)',
+                                            }}
+                                        >
                                             <div className='absolute bottom-0 left-0 right-0 p-6'>
                                                 <div className='flex flex-wrap gap-3 mb-4'>
                                                     {item.tech.map(
@@ -136,12 +166,16 @@ const PortfolioPage = () => {
                                         {item.desc}
                                     </p>
 
-                                    <div className='flex gap-4 justify-end'>
+                                    <div className='flex gap-4 justify-end relative z-10'>
                                         <Link href={item.github}>
                                             <motion.button
                                                 className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors'
                                                 whileHover={{ scale: 1.02 }}
                                                 whileTap={{ scale: 0.98 }}
+                                                transition={{
+                                                    duration: 0.2,
+                                                    ease: 'easeOut',
+                                                }}
                                             >
                                                 <Github className='w-5 h-5' />
                                                 Code
@@ -152,6 +186,10 @@ const PortfolioPage = () => {
                                                 className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors'
                                                 whileHover={{ scale: 1.02 }}
                                                 whileTap={{ scale: 0.98 }}
+                                                transition={{
+                                                    duration: 0.2,
+                                                    ease: 'easeOut',
+                                                }}
                                             >
                                                 <ExternalLink className='w-5 h-5' />
                                                 Live Demo
@@ -170,7 +208,6 @@ const PortfolioPage = () => {
                 </h1>
 
                 <div className='relative'>
-                    {/* Animated background circles */}
                     <div className='absolute inset-0 z-0'>
                         {[...Array(3)].map((_, i) => (
                             <motion.div
@@ -187,7 +224,6 @@ const PortfolioPage = () => {
                         ))}
                     </div>
 
-                    {/* Main rotating text */}
                     <motion.svg
                         viewBox='0 0 300 300'
                         className='w-64 h-64 md:w-[500px] md:h-[500px]'
@@ -224,11 +260,11 @@ const PortfolioPage = () => {
                     <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                         <Link href='/contact'>
                             <motion.div
-                                className='w-20 h-20 md:w-32 md:h-32 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center group'
+                                className='w-20 h-20 md:w-32 md:h-32 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center group relative z-10'
                                 whileHover={{
                                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
                                 }}
-                                transition={{ duration: 0.2 }}
+                                transition={{ duration: 0.2, ease: 'easeOut' }}
                             >
                                 <span className='text-white font-medium text-lg md:text-xl'>
                                     Let's Talk
@@ -237,7 +273,10 @@ const PortfolioPage = () => {
                                     className='absolute inset-0 bg-white rounded-full'
                                     initial={{ opacity: 0 }}
                                     whileHover={{ opacity: 0.1 }}
-                                    transition={{ duration: 0.2 }}
+                                    transition={{
+                                        duration: 0.2,
+                                        ease: 'easeOut',
+                                    }}
                                 />
                             </motion.div>
                         </Link>
