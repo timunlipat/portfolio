@@ -42,10 +42,10 @@ const ContactPage = () => {
 
     return (
         <motion.div
-            className='min-h-screen'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            className='h-full'
+            initial={{ y: '-200vh' }}
+            animate={{ y: '0%' }}
+            transition={{ duration: 1 }}
         >
             <div className='relative bg-gradient-to-b from-indigo-50 via-purple-50 to-white p-4 md:p-8 lg:p-12'>
                 <div className='max-w-7xl mx-auto'>
