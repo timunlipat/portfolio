@@ -39,7 +39,7 @@ const items = [
     {
         id: 4,
         color: 'from-purple-300 to-red-300',
-        title: 'Spotify Music App',
+        title: 'Music App',
         tech: ['React', 'Redux', 'Web Audio API'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
         img: 'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
@@ -116,18 +116,12 @@ const PortfolioPage = () => {
                                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                                 key={item.id}
                             >
-                                <div className='flex flex-col gap-8 max-w-5xl px-6'>
-                                    <h1 className='text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text py-2'>
+                                <div className='flex flex-col gap-8 w-full py-4 px-6 md:px-8'>
+                                    <h1 className='text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-[1.1] sm:leading-tight tracking-tight sm:tracking-normal py-2'>
                                         {item.title}
                                     </h1>
 
-                                    <div
-                                        className={`relative rounded-xl overflow-hidden shadow-2xl group ${
-                                            isScrolling
-                                                ? 'pointer-events-none'
-                                                : ''
-                                        }`}
-                                    >
+                                    <div className='w-full relative rounded-xl overflow-hidden shadow-2xl group'>
                                         <div className='w-full h-[60vh] relative pointer-events-none'>
                                             <Image
                                                 src={item.img}
@@ -162,7 +156,7 @@ const PortfolioPage = () => {
                                         </div>
                                     </div>
 
-                                    <p className='text-lg text-gray-800/90 leading-relaxed'>
+                                    <p className='w-full text-lg text-gray-800/90 leading-relaxed'>
                                         {item.desc}
                                     </p>
 
