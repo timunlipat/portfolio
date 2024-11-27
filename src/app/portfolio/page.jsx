@@ -135,22 +135,34 @@ const PortfolioPage = () => {
                                             </p>
 
                                             <div className='flex gap-4 mt-auto'>
+                                                {/* <Link href={item.github}> */}
                                                 <motion.button
                                                     className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-lg'
-                                                    whileHover={{ scale: 1.02 }}
-                                                    whileTap={{ scale: 0.98 }}
+                                                    whileHover={{
+                                                        scale: 1.02,
+                                                    }}
+                                                    whileTap={{
+                                                        scale: 0.98,
+                                                    }}
                                                 >
                                                     <Github className='w-5 h-5' />
                                                     View Code
                                                 </motion.button>
+                                                {/* </Link> */}
+                                                {/* <Link href={item.link}> */}
                                                 <motion.button
                                                     className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors shadow-lg'
-                                                    whileHover={{ scale: 1.02 }}
-                                                    whileTap={{ scale: 0.98 }}
+                                                    whileHover={{
+                                                        scale: 1.02,
+                                                    }}
+                                                    whileTap={{
+                                                        scale: 0.98,
+                                                    }}
                                                 >
                                                     <ExternalLink className='w-5 h-5' />
                                                     Live Demo
                                                 </motion.button>
+                                                {/* </Link> */}
                                             </div>
                                         </div>
                                     </div>
