@@ -271,7 +271,7 @@ const About = () => {
                                 {/* Center */}
                                 <div className='w-1/6'>
                                     {/* Line */}
-                                    <div className='w-1 h-full bg-gray-600 rounded relative'>
+                                    <div className='w-1 h-1 bg-gray-600 rounded relative'>
                                         {/* Line Circle */}
                                         <div className='absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2'></div>
                                     </div>
