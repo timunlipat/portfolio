@@ -123,11 +123,12 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            {/* Menu */}
+            {/* Menu Button */}
             <div className='md:hidden'>
                 <button
                     className='w-10 h-8 flex flex-col justify-between z-50 relative'
                     onClick={() => setOpen(!open)}
+                    style={{ position: 'relative', zIndex: 60 }}
                 >
                     <motion.div
                         variants={topVariant}
@@ -154,16 +155,26 @@ const Navbar = () => {
                             initial='initial'
                             animate='animate'
                             exit='exit'
-                            className='fixed top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-10'
+                            className='fixed top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl'
+                            style={{ zIndex: 55 }}
                         >
                             {links.map(link => (
                                 <motion.div
                                     variants={listItemVariants}
                                     key={link.title}
-                                    className='cursor-pointer'
-                                    onClick={() => setOpen(false)}
+                                    className='relative'
+                                    style={{ zIndex: 56 }}
                                 >
-                                    <Link href={link.url}>{link.title}</Link>
+                                    <Link
+                                        href={link.url}
+                                        className='block py-2 px-4'
+                                        onClick={e => {
+                                            e.stopPropagation();
+                                            setOpen(false);
+                                        }}
+                                    >
+                                        {link.title}
+                                    </Link>
                                 </motion.div>
                             ))}
                         </motion.div>
