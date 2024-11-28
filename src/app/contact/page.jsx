@@ -20,7 +20,7 @@ const ContactPage = () => {
         {
             name: 'Dina Razak',
             role: 'Owner',
-            company: "Dina's Bakers",
+            company: "Dina's Bakery",
             text: 'Our online orders have skyrocketed thanks to their amazing website! It’s easy to use, and their support team is super helpful. Highly recommend!',
             rating: 5,
         },
@@ -54,7 +54,7 @@ const ContactPage = () => {
                         className='text-center mb-16 relative'
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ delay: 1.2 }}
                     >
                         <span className='inline-block px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4'>
                             Let&apos;s Work Together
@@ -73,7 +73,7 @@ const ContactPage = () => {
                         className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-16'
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
+                        transition={{ delay: 1.2 }}
                     >
                         {features.map((feature, index) => (
                             <div
@@ -94,7 +94,7 @@ const ContactPage = () => {
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.5 }}
+                            transition={{ delay: 1.2 }}
                             className='space-y-8'
                         >
                             {/* Contact Info Card */}
@@ -157,7 +157,7 @@ const ContactPage = () => {
                                         key={index}
                                         className='bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20'
                                         whileHover={{ scale: 1.02 }}
-                                        transition={{ duration: 0.2 }}
+                                        transition={{ duration: 1.2 }}
                                     >
                                         <div className='flex items-start space-x-4'>
                                             <div className='w-10 h-10 rounded-full bg-gradient-to-r from-purple-400 to-indigo-400 flex items-center justify-center text-white font-medium'>
@@ -204,7 +204,7 @@ const ContactPage = () => {
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.7 }}
+                            transition={{ delay: 1.2 }}
                             className='relative'
                         >
                             <form
