@@ -26,13 +26,13 @@ const TransitionProvider = ({ children }) => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
-                    <span className='text-6xl md:text-7xl lg:text-9xl font-extrabold tracking-tight capitalize bg-gradient-to-r from-purple-300 via-red-300 to-orange-300 bg-clip-text text-transparent drop-shadow-2xl px-8 relative transform hover:scale-105 transition-transform duration-300'>
+                    <span className='text-6xl md:text-7xl lg:text-9xl font-extrabold tracking-tight capitalize bg-gradient-to-r from-purple-300 via-red-300 to-orange-300 bg-clip-text text-transparent drop-shadow-2xl px-8 relative transform hover:scale-105 transition-transform duration-300 z-60'>
                         {pathName.substring(1) || 'Home'}
                         <div className='absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-purple-300 via-red-300 to-orange-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></div>
                     </span>
                 </motion.div>
                 <motion.div
-                    className='h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-30'
+                    className='h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-40'
                     initial={{ height: '140vh' }}
                     animate={{ height: '0vh', transition: { delay: 0.5 } }}
                 />
