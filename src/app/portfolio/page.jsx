@@ -1,9 +1,9 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import ImageCarousel from '../components/imageCarousel';
 
 const items = [
     {
@@ -12,7 +12,12 @@ const items = [
         title: 'React Commerce',
         tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
-        img: 'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+        images: [
+            'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        ],
         link: '',
         github: '',
     },
@@ -22,7 +27,12 @@ const items = [
         title: 'React Blog',
         tech: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
-        img: 'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+        images: [
+            'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+        ],
         link: '',
         github: '',
     },
@@ -32,7 +42,12 @@ const items = [
         title: 'Vanilla Book App',
         tech: ['JavaScript', 'Firebase', 'CSS3'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
-        img: 'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+        images: [
+            'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+        ],
         link: '',
         github: '',
     },
@@ -42,7 +57,12 @@ const items = [
         title: 'Music App',
         tech: ['React', 'Redux', 'Web Audio API'],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
-        img: 'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        images: [
+            'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+            'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+        ],
         link: '',
         github: '',
     },
@@ -103,14 +123,7 @@ const PortfolioPage = () => {
                                     </h1>
 
                                     <div className='grid md:grid-cols-2 gap-8 items-start'>
-                                        <div className='relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl group'>
-                                            <Image
-                                                src={item.img}
-                                                alt={`${item.title} preview`}
-                                                fill
-                                                className='object-cover object-center transform group-hover:scale-105 transition-transform duration-700'
-                                                priority={item.id === 1}
-                                            />
+                                        <ImageCarousel images={item.images}>
                                             <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'>
                                                 <div className='absolute bottom-0 left-0 right-0 p-6'>
                                                     <div className='flex flex-wrap gap-2'>
@@ -127,7 +140,7 @@ const PortfolioPage = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </ImageCarousel>
 
                                         <div className='flex flex-col gap-6'>
                                             <p className='text-lg text-gray-800/90 leading-relaxed'>
@@ -219,7 +232,6 @@ const PortfolioPage = () => {
                                 className='text-xl font-medium tracking-wider'
                             >
                                 ✦ Full-Stack Developer ✦ UI/UX Designer ✦
-                                Creative Technologist ✦
                             </textPath>
                         </text>
                     </motion.svg>
