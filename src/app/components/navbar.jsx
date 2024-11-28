@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
 import NavLink from './navLink';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const links = [
     { url: '/', title: 'Home' },
@@ -46,26 +46,38 @@ const Navbar = () => {
     };
 
     const listVariants = {
-        closed: {
+        initial: {
             x: '100vw',
         },
-        opened: {
+        animate: {
             x: 0,
             transition: {
                 when: 'beforeChildren',
                 staggerChildren: 0.2,
             },
         },
+        exit: {
+            x: '100vw',
+            transition: {
+                when: 'afterChildren',
+                staggerChildren: 0.1,
+                staggerDirection: -1,
+            },
+        },
     };
 
     const listItemVariants = {
-        closed: {
+        initial: {
             x: 10,
             opacity: 0,
         },
-        opened: {
+        animate: {
             x: 0,
             opacity: 1,
+        },
+        exit: {
+            x: -10,
+            opacity: 0,
         },
     };
 
@@ -135,23 +147,28 @@ const Navbar = () => {
                 </button>
 
                 {/* Menu List */}
-                {open && (
-                    <motion.div
-                        variants={listVariants}
-                        initial='closed'
-                        animate='opened'
-                        className='absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40'
-                    >
-                        {links.map(link => (
-                            <motion.div
-                                variants={listItemVariants}
-                                key={link.title}
-                            >
-                                <Link href={link.url}>{link.title}</Link>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                )}
+                <AnimatePresence mode='wait'>
+                    {open && (
+                        <motion.div
+                            variants={listVariants}
+                            initial='initial'
+                            animate='animate'
+                            exit='exit'
+                            className='fixed top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-10'
+                        >
+                            {links.map(link => (
+                                <motion.div
+                                    variants={listItemVariants}
+                                    key={link.title}
+                                    className='cursor-pointer'
+                                    onClick={() => setOpen(false)}
+                                >
+                                    <Link href={link.url}>{link.title}</Link>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );
