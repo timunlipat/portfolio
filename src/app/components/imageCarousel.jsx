@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
@@ -6,17 +6,17 @@ import Image from 'next/image';
 const ImageCarousel = ({ images, children }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const showNextImage = () => {
+    const showNextImage = useCallback(() => {
         setCurrentIndex(prevIndex =>
             prevIndex + 1 === images.length ? 0 : prevIndex + 1
         );
-    };
+    }, [images.length]);
 
-    const showPrevImage = () => {
+    const showPrevImage = useCallback(() => {
         setCurrentIndex(prevIndex =>
             prevIndex === 0 ? images.length - 1 : prevIndex - 1
         );
-    };
+    }, [images.length]);
 
     useEffect(() => {
         const handleKeyDown = e => {
@@ -26,12 +26,12 @@ const ImageCarousel = ({ images, children }) => {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
+    }, [showPrevImage, showNextImage]);
 
     useEffect(() => {
         const timer = setInterval(showNextImage, 5000);
         return () => clearInterval(timer);
-    }, [currentIndex]);
+    }, [showNextImage]);
 
     return (
         <div className='relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-2xl group'>
