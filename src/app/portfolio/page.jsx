@@ -95,6 +95,18 @@ const PortfolioPage = () => {
         },
     };
 
+    const techBadgeVariants = {
+        initial: { opacity: 0, y: 20 },
+        animate: index => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.3,
+                delay: index * 0.1,
+            },
+        }),
+    };
+
     return (
         <motion.div
             className='h-full'
@@ -167,7 +179,7 @@ const PortfolioPage = () => {
 
                                     <div className='grid md:grid-cols-2 gap-8 items-start'>
                                         <motion.div
-                                            className='relative group overflow-hidden rounded-xl shadow-2xl'
+                                            className='flex flex-col gap-4'
                                             initial={{
                                                 opacity: 0,
                                                 scale: 0.95,
@@ -181,33 +193,37 @@ const PortfolioPage = () => {
                                                 delay: 0.4,
                                             }}
                                         >
-                                            <ImageCarousel images={item.images}>
-                                                <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'>
-                                                    <div className='absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300'>
-                                                        <div className='flex flex-wrap gap-2'>
-                                                            {item.tech.map(
-                                                                (
-                                                                    tech,
-                                                                    index
-                                                                ) => (
-                                                                    <span
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className='px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800 shadow-sm'
-                                                                    >
-                                                                        {tech}
-                                                                    </span>
-                                                                )
-                                                            )}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </ImageCarousel>
+                                            <div className='relative overflow-hidden rounded-xl shadow-2xl'>
+                                                <ImageCarousel
+                                                    images={item.images}
+                                                />
+                                            </div>
+
+                                            <div className='flex flex-wrap gap-3 mt-4'>
+                                                {item.tech.map(
+                                                    (tech, techIndex) => (
+                                                        <motion.div
+                                                            key={techIndex}
+                                                            variants={
+                                                                techBadgeVariants
+                                                            }
+                                                            initial='initial'
+                                                            whileInView='animate'
+                                                            custom={techIndex}
+                                                            className='group relative'
+                                                        >
+                                                            <div className='absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity dark:from-purple-400 dark:to-indigo-400' />
+                                                            <div className='relative px-3 py-1.5 bg-white dark:bg-gray-800 rounded-full text-sm font-medium text-gray-800 dark:text-gray-200 shadow-md transform group-hover:-translate-y-1 transition-transform'>
+                                                                {tech}
+                                                            </div>
+                                                        </motion.div>
+                                                    )
+                                                )}
+                                            </div>
                                         </motion.div>
 
                                         <motion.div
-                                            className='flex flex-col gap-6'
+                                            className='flex flex-col gap-6 h-full'
                                             initial={{ opacity: 0, x: 20 }}
                                             whileInView={{ opacity: 1, x: 0 }}
                                             transition={{
@@ -215,27 +231,37 @@ const PortfolioPage = () => {
                                                 delay: 0.5,
                                             }}
                                         >
-                                            <p className='text-lg text-gray-800/90 leading-relaxed'>
-                                                {item.desc}
-                                            </p>
+                                            <div className='flex flex-col justify-between h-full'>
+                                                <p className='text-lg text-gray-800/90 leading-relaxed'>
+                                                    {item.desc}
+                                                </p>
 
-                                            <div className='flex gap-4 mt-auto'>
-                                                <motion.button
-                                                    className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-lg'
-                                                    whileHover={{ scale: 1.02 }}
-                                                    whileTap={{ scale: 0.98 }}
-                                                >
-                                                    <Github className='w-5 h-5' />
-                                                    View Code
-                                                </motion.button>
-                                                <motion.button
-                                                    className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors shadow-lg'
-                                                    whileHover={{ scale: 1.02 }}
-                                                    whileTap={{ scale: 0.98 }}
-                                                >
-                                                    <ExternalLink className='w-5 h-5' />
-                                                    Live Demo
-                                                </motion.button>
+                                                <div className='flex gap-4 mt-8 justify-start'>
+                                                    <motion.button
+                                                        className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-lg'
+                                                        whileHover={{
+                                                            scale: 1.02,
+                                                        }}
+                                                        whileTap={{
+                                                            scale: 0.98,
+                                                        }}
+                                                    >
+                                                        <Github className='w-5 h-5' />
+                                                        View Code
+                                                    </motion.button>
+                                                    <motion.button
+                                                        className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors shadow-lg'
+                                                        whileHover={{
+                                                            scale: 1.02,
+                                                        }}
+                                                        whileTap={{
+                                                            scale: 0.98,
+                                                        }}
+                                                    >
+                                                        <ExternalLink className='w-5 h-5' />
+                                                        Live Demo
+                                                    </motion.button>
+                                                </div>
                                             </div>
                                         </motion.div>
                                     </div>
@@ -246,7 +272,7 @@ const PortfolioPage = () => {
                 </div>
             </div>
 
-            {/* Animated Circle */}
+            {/* Animated Circle section */}
             <div className='w-screen h-screen bg-gradient-to-br from-indigo-50 to-purple-50 flex flex-col gap-16 items-center justify-center text-center'>
                 <h1 className='text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 pb-10'>
                     Ready to Build Something Amazing?
