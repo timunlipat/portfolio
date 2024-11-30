@@ -177,9 +177,9 @@ const PortfolioPage = () => {
                                         </motion.h2>
                                     </div>
 
-                                    <div className='grid md:grid-cols-2 gap-8 items-start'>
+                                    <div className='grid md:grid-cols-2 gap-8 items-stretch h-full'>
                                         <motion.div
-                                            className='flex flex-col gap-4'
+                                            className='flex flex-col gap-4 h-full'
                                             initial={{
                                                 opacity: 0,
                                                 scale: 0.95,
@@ -193,7 +193,7 @@ const PortfolioPage = () => {
                                                 delay: 0.4,
                                             }}
                                         >
-                                            <div className='relative overflow-hidden rounded-xl shadow-2xl'>
+                                            <div className='relative overflow-hidden rounded-xl shadow-2xl flex-grow'>
                                                 <ImageCarousel
                                                     images={item.images}
                                                 />
@@ -236,7 +236,7 @@ const PortfolioPage = () => {
                                                     {item.desc}
                                                 </p>
 
-                                                <div className='flex gap-4 mt-8 justify-start'>
+                                                <div className='flex gap-4 mt-8 justify-start md:justify-end'>
                                                     <motion.button
                                                         className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-lg'
                                                         whileHover={{
