@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { useRef } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github, ExternalLink, ArrowRight } from 'lucide-react';
 import ImageCarousel from '../components/imageCarousel';
 
 const items = [
@@ -67,7 +67,6 @@ const items = [
         github: '',
     },
 ];
-
 const PortfolioPage = () => {
     const ref = useRef();
     const { scrollYProgress } = useScroll({ target: ref });
@@ -104,46 +103,118 @@ const PortfolioPage = () => {
             transition={{ duration: 1 }}
         >
             <div className='h-[600vh] relative' ref={ref}>
-                <div className='w-screen h-[calc(100vh-6rem)] flex items-center justify-center'>
-                    <h1 className='text-7xl md:text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-transparent bg-clip-text z-0'>
+                {/* Hero Section */}
+                <div className='w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center'>
+                    <motion.h1
+                        className='text-7xl md:text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-transparent bg-clip-text'
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
                         Showcase
-                    </h1>
+                    </motion.h1>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className='mt-6 flex items-center gap-2 text-gray-600'
+                    >
+                        <ArrowRight className='w-5 h-5 animate-bounce' />
+                        <span className='text-lg'>Scroll to explore</span>
+                    </motion.div>
                 </div>
-                <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
-                    <motion.div style={{ x }} className='flex relative z-10'>
-                        <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300 pointer-events-auto' />
 
-                        {items.map(item => (
+                {/* Horizontal Scroll Gallery */}
+                <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
+                    <motion.div style={{ x }} className='flex'>
+                        <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300' />
+
+                        {items.map((item, index) => (
                             <div
-                                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                                 key={item.id}
+                                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                             >
-                                <div className='flex flex-col gap-6 w-full max-w-6xl mx-auto px-6 md:px-8'>
-                                    <h1 className='text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-tight tracking-tight py-2'>
-                                        {item.title}
-                                    </h1>
+                                <motion.div
+                                    className='flex flex-col gap-8 w-full max-w-6xl mx-auto px-6 md:px-8'
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 0.6 }}
+                                >
+                                    <div className='flex flex-col gap-4'>
+                                        <motion.span
+                                            className='text-sm font-medium text-gray-800/70'
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{
+                                                duration: 0.6,
+                                                delay: 0.2,
+                                            }}
+                                        >
+                                            Project {index + 1}
+                                        </motion.span>
+                                        <motion.h2
+                                            className='text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-tight tracking-tight'
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                duration: 0.6,
+                                                delay: 0.3,
+                                            }}
+                                        >
+                                            {item.title}
+                                        </motion.h2>
+                                    </div>
 
                                     <div className='grid md:grid-cols-2 gap-8 items-start'>
-                                        <ImageCarousel images={item.images}>
-                                            <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'>
-                                                <div className='absolute bottom-0 left-0 right-0 p-6'>
-                                                    <div className='flex flex-wrap gap-2'>
-                                                        {item.tech.map(
-                                                            (tech, index) => (
-                                                                <span
-                                                                    key={index}
-                                                                    className='px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800 shadow-sm'
-                                                                >
-                                                                    {tech}
-                                                                </span>
-                                                            )
-                                                        )}
+                                        <motion.div
+                                            className='relative group overflow-hidden rounded-xl shadow-2xl'
+                                            initial={{
+                                                opacity: 0,
+                                                scale: 0.95,
+                                            }}
+                                            whileInView={{
+                                                opacity: 1,
+                                                scale: 1,
+                                            }}
+                                            transition={{
+                                                duration: 0.6,
+                                                delay: 0.4,
+                                            }}
+                                        >
+                                            <ImageCarousel images={item.images}>
+                                                <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'>
+                                                    <div className='absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300'>
+                                                        <div className='flex flex-wrap gap-2'>
+                                                            {item.tech.map(
+                                                                (
+                                                                    tech,
+                                                                    index
+                                                                ) => (
+                                                                    <span
+                                                                        key={
+                                                                            index
+                                                                        }
+                                                                        className='px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800 shadow-sm'
+                                                                    >
+                                                                        {tech}
+                                                                    </span>
+                                                                )
+                                                            )}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </ImageCarousel>
+                                            </ImageCarousel>
+                                        </motion.div>
 
-                                        <div className='flex flex-col gap-6'>
+                                        <motion.div
+                                            className='flex flex-col gap-6'
+                                            initial={{ opacity: 0, x: 20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{
+                                                duration: 0.6,
+                                                delay: 0.5,
+                                            }}
+                                        >
                                             <p className='text-lg text-gray-800/90 leading-relaxed'>
                                                 {item.desc}
                                             </p>
@@ -151,38 +222,31 @@ const PortfolioPage = () => {
                                             <div className='flex gap-4 mt-auto'>
                                                 <motion.button
                                                     className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-lg'
-                                                    whileHover={{
-                                                        scale: 1.02,
-                                                    }}
-                                                    whileTap={{
-                                                        scale: 0.98,
-                                                    }}
+                                                    whileHover={{ scale: 1.02 }}
+                                                    whileTap={{ scale: 0.98 }}
                                                 >
                                                     <Github className='w-5 h-5' />
                                                     View Code
                                                 </motion.button>
                                                 <motion.button
                                                     className='flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors shadow-lg'
-                                                    whileHover={{
-                                                        scale: 1.02,
-                                                    }}
-                                                    whileTap={{
-                                                        scale: 0.98,
-                                                    }}
+                                                    whileHover={{ scale: 1.02 }}
+                                                    whileTap={{ scale: 0.98 }}
                                                 >
                                                     <ExternalLink className='w-5 h-5' />
                                                     Live Demo
                                                 </motion.button>
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
                         ))}
                     </motion.div>
                 </div>
             </div>
 
+            {/* Animated Circle */}
             <div className='w-screen h-screen bg-gradient-to-br from-indigo-50 to-purple-50 flex flex-col gap-16 items-center justify-center text-center'>
                 <h1 className='text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 pb-10'>
                     Ready to Build Something Amazing?
@@ -190,7 +254,7 @@ const PortfolioPage = () => {
 
                 <div className='relative'>
                     <div className='absolute inset-0 z-0'>
-                        {[...Array(3)].map((_, i) => (
+                        {[...Array(7)].map((_, i) => (
                             <motion.div
                                 key={i}
                                 className='absolute inset-0'
