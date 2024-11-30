@@ -59,16 +59,16 @@ const ImageCarousel = ({ images, children }) => {
 
             <button
                 onClick={showPrevImage}
-                className='absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hover:bg-white'
+                className='absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20'
             >
-                <ChevronLeft className='w-6 h-6 text-gray-800' />
+                <ChevronLeft className='w-8 h-8 text-gray-400' />
             </button>
 
             <button
                 onClick={showNextImage}
-                className='absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hover:bg-white'
+                className='absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20'
             >
-                <ChevronRight className='w-6 h-6 text-gray-800' />
+                <ChevronRight className='w-8 h-8 text-gray-400' />
             </button>
 
             <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20'>

@@ -105,13 +105,14 @@ const PortfolioPage = () => {
         >
             <div className='h-[600vh] relative' ref={ref}>
                 <div className='w-screen h-[calc(100vh-6rem)] flex items-center justify-center'>
-                    <h1 className='text-7xl md:text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-transparent bg-clip-text'>
+                    <h1 className='text-7xl md:text-8xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 text-transparent bg-clip-text z-0'>
                         Showcase
                     </h1>
                 </div>
                 <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
-                    <motion.div style={{ x }} className='flex'>
-                        <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300' />
+                    <motion.div style={{ x }} className='flex relative z-10'>
+                        <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300 pointer-events-auto' />
+
                         {items.map(item => (
                             <div
                                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
