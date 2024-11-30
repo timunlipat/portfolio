@@ -1,4 +1,3 @@
-'use client';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -59,16 +58,16 @@ const ImageCarousel = ({ images, children }) => {
 
             <button
                 onClick={showPrevImage}
-                className='absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20'
+                className='absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 p-2 bg-black/30 hover:bg-black/50 rounded-full'
             >
-                <ChevronLeft className='w-8 h-8 text-gray-400' />
+                <ChevronLeft className='w-8 h-8 text-white' />
             </button>
 
             <button
                 onClick={showNextImage}
-                className='absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20'
+                className='absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 p-2 bg-black/30 hover:bg-black/50 rounded-full'
             >
-                <ChevronRight className='w-8 h-8 text-gray-400' />
+                <ChevronRight className='w-8 h-8 text-white' />
             </button>
 
             <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20'>
