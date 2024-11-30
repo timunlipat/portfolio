@@ -10,7 +10,22 @@ const items = [
         id: 1,
         color: 'from-red-300 to-blue-300',
         title: 'React Commerce',
-        tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+        tech: [
+            'React',
+            'Node.js',
+            'MongoDB',
+            'Stripe',
+            'Next.js',
+            'Tailwind CSS',
+            'TypeScript',
+            'Redux',
+            'Express.js',
+            'Jest',
+            'Cypress',
+            'GraphQL',
+            'Prisma',
+            'Vercel',
+        ],
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis.',
         images: [
             'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
@@ -199,26 +214,30 @@ const PortfolioPage = () => {
                                                 />
                                             </div>
 
-                                            <div className='flex flex-wrap gap-3 mt-4'>
-                                                {item.tech.map(
-                                                    (tech, techIndex) => (
-                                                        <motion.div
-                                                            key={techIndex}
-                                                            variants={
-                                                                techBadgeVariants
-                                                            }
-                                                            initial='initial'
-                                                            whileInView='animate'
-                                                            custom={techIndex}
-                                                            className='group relative'
-                                                        >
-                                                            <div className='absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity dark:from-purple-400 dark:to-indigo-400' />
-                                                            <div className='relative px-3 py-1.5 bg-white dark:bg-gray-800 rounded-full text-sm font-medium text-gray-800 dark:text-gray-200 shadow-md transform group-hover:-translate-y-1 transition-transform'>
-                                                                {tech}
-                                                            </div>
-                                                        </motion.div>
-                                                    )
-                                                )}
+                                            <div className='flex flex-nowrap gap-2 mt-4'>
+                                                <div className='flex flex-wrap gap-2 max-w-md'>
+                                                    {item.tech.map(
+                                                        (tech, techIndex) => (
+                                                            <motion.div
+                                                                key={techIndex}
+                                                                variants={
+                                                                    techBadgeVariants
+                                                                }
+                                                                initial='initial'
+                                                                whileInView='animate'
+                                                                custom={
+                                                                    techIndex
+                                                                }
+                                                                className='group relative flex-shrink-0'
+                                                            >
+                                                                <div className='absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity dark:from-purple-400 dark:to-indigo-400' />
+                                                                <div className='relative px-2 py-1 bg-white dark:bg-gray-800 rounded-full text-xs font-medium text-gray-800 dark:text-gray-200 shadow-[0_2px_4px_rgba(0,0,0,0.06)] transform group-hover:-translate-y-1 transition-transform'>
+                                                                    {tech}
+                                                                </div>
+                                                            </motion.div>
+                                                        )
+                                                    )}
+                                                </div>
                                             </div>
                                         </motion.div>
 
