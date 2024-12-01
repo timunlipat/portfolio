@@ -34,7 +34,7 @@ const ImageCarousel = ({ images, children }) => {
     }, [showNextImage]);
 
     return (
-        <div className='relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-2xl group'>
+        <div className='relative w-full h-full shadow-2xl group'>
             <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10' />
 
             <AnimatePresence initial={false}>
@@ -44,13 +44,14 @@ const ImageCarousel = ({ images, children }) => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.3 }}
-                    className='absolute inset-0'
+                    className='relative w-full h-full'
                 >
                     <Image
                         src={images[currentIndex]}
                         alt={`Project image ${currentIndex + 1}`}
                         fill
-                        className='object-cover object-center'
+                        className='object-contain'
+                        sizes='(max-width: 768px) 100vw, 50vw'
                         priority={currentIndex === 0}
                     />
                 </motion.div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
-import ImageCarousel from '../imageCarousel';
+import ImageCarousel from './imageCarousel';
 import TechBadge from './TechBadge';
 
 const ProjectCard = ({ item, index }) => {
@@ -40,7 +40,7 @@ const ProjectCard = ({ item, index }) => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <div className='relative overflow-hidden rounded-xl shadow-2xl flex-grow'>
+                        <div className='relative overflow-hidden shadow-2xl flex-grow min-h-[350px]'>
                             <ImageCarousel images={item.images} />
                         </div>
 
