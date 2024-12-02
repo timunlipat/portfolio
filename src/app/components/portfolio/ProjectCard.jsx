@@ -3,7 +3,6 @@ import { Github, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import ImageCarousel from './imageCarousel';
 import TechBadge from './TechBadge';
-import { useState } from 'react';
 
 const ProjectCard = ({ item, index }) => {
     const handleCodeClick = () => {
@@ -82,30 +81,29 @@ const ProjectCard = ({ item, index }) => {
                             </p>
 
                             <div className='flex gap-4 mt-8 justify-start md:justify-end'>
-                                {item.github && (
-                                    <motion.button
-                                        onClick={handleCodeClick}
-                                        className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-white shadow-lg ${
-                                            index === 0
-                                                ? 'bg-[#0052CC] hover:bg-[#0047B3]'
-                                                : 'bg-gray-900 hover:bg-gray-800'
-                                        } transition-colors`}
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                    >
-                                        {index === 0 ? (
-                                            <Image
-                                                src='/bitbucket.svg'
-                                                alt='Bitbucket'
-                                                width={20}
-                                                height={20}
-                                                className='text-white'
-                                            />
-                                        ) : (
+                                {item.id === 1 ? (
+                                    <div className='flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-white bg-[#0052CC]'>
+                                        <Image
+                                            src='/bitbucket.svg'
+                                            alt='Bitbucket'
+                                            width={20}
+                                            height={20}
+                                            className='text-white'
+                                        />
+                                        Private Repository
+                                    </div>
+                                ) : (
+                                    item.github && (
+                                        <motion.button
+                                            onClick={handleCodeClick}
+                                            className='flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-lg'
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                        >
                                             <Github className='w-5 h-5' />
-                                        )}
-                                        View Code
-                                    </motion.button>
+                                            View Code
+                                        </motion.button>
+                                    )
                                 )}
                                 {item.link && (
                                     <motion.button

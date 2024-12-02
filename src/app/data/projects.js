@@ -26,6 +26,7 @@ export const projects = [
         link: 'https://merchants.eventlah.com/',
         // github: 'https://bitbucket.org/eventador-operating-system/eventlah-react-merchant/src/main/',
         github: null,
+        isPrivate: true,
     },
     {
         id: 2,
