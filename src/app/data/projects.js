@@ -49,8 +49,8 @@ export const projects = [
             '/projects/project2/2.png',
             '/projects/project2/3.png',
         ],
-        link: null,
-        github: null,
+        link: 'https://milbnb.vercel.app/',
+        github: 'https://github.com/timunlipat/milbnb',
     },
     {
         id: 3,
@@ -75,8 +75,8 @@ export const projects = [
             '/projects/project3/4.png',
             '/projects/project3/5.png',
         ],
-        link: null,
-        github: null,
+        link: 'https://duomingo.vercel.app/',
+        github: 'https://github.com/timunlipat/duomingo',
     },
     {
         id: 4,
@@ -98,7 +98,7 @@ export const projects = [
             '/projects/project4/2.png',
             '/projects/project4/3.png',
         ],
-        link: null,
-        github: null,
+        link: 'https://portfolio-zamil-2.vercel.app/',
+        github: 'https://github.com/timunlipat/portfolio-2',
     },
 ];
