@@ -37,7 +37,7 @@ const ProjectCard = ({ item, index }) => {
                         Project {index + 1}
                     </motion.span>
                     <motion.h2
-                        className='text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-tight tracking-tight pb-3'
+                        className='text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-tight tracking-tight py-1'
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
@@ -53,7 +53,7 @@ const ProjectCard = ({ item, index }) => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <div className='relative overflow-hidden min-h-[350px] rounded-xl'>
+                        <div className='relative overflow-hidden min-h-[350px] rounded-2xl'>
                             <ImageCarousel images={item.images} />
                         </div>
                         <div className='flex flex-nowrap gap-2 mt-4'>
