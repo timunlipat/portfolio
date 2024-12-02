@@ -2,7 +2,7 @@ export const projects = [
     {
         id: 1,
         color: 'from-red-300 to-blue-300',
-        title: 'Eventlah Merchant Portal',
+        title: 'Eventlah',
         tech: [
             'React',
             'TypeScript',
@@ -24,8 +24,8 @@ export const projects = [
             '/projects/project1/6.png',
         ],
         link: 'https://merchants.eventlah.com/',
-        github: 'https://bitbucket.org/eventador-operating-system/eventlah-react-merchant/src/main/',
-        isPrivate: true,
+        // github: 'https://bitbucket.org/eventador-operating-system/eventlah-react-merchant/src/main/',
+        github: null,
     },
     {
         id: 2,
