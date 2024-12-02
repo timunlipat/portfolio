@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import ImageCarousel from './imageCarousel';
 import TechBadge from './TechBadge';
 
@@ -69,11 +70,25 @@ const ProjectCard = ({ item, index }) => {
 
                             <div className='flex gap-4 mt-8 justify-start md:justify-end'>
                                 <motion.button
-                                    className='flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors shadow-lg'
+                                    className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-white shadow-lg ${
+                                        index === 0
+                                            ? 'bg-[#0052CC] hover:bg-[#0047B3]'
+                                            : 'bg-gray-900 hover:bg-gray-800'
+                                    } transition-colors`}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
-                                    <Github className='w-5 h-5' />
+                                    {index === 0 ? (
+                                        <Image
+                                            src='/bitbucket.svg'
+                                            alt='Bitbucket'
+                                            width={20}
+                                            height={20}
+                                            className='text-white'
+                                        />
+                                    ) : (
+                                        <Github className='w-5 h-5' />
+                                    )}
                                     View Code
                                 </motion.button>
                                 <motion.button
