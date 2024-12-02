@@ -28,8 +28,8 @@ export const projects = [
             '/projects/project1/5.png',
             '/projects/project1/6.png',
         ],
-        link: null, // Changed from empty string to null
-        github: null, // Changed from empty string to null
+        link: null,
+        github: null,
     },
     {
         id: 2,

@@ -40,10 +40,9 @@ const ProjectCard = ({ item, index }) => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <div className='relative overflow-hidden shadow-2xl flex-grow min-h-[350px]'>
+                        <div className='relative overflow-hidden flex-grow min-h-[350px] rounded-xl'>
                             <ImageCarousel images={item.images} />
                         </div>
-
                         <div className='flex flex-nowrap gap-2 mt-4'>
                             <div className='flex flex-wrap gap-2 max-w-md'>
                                 {item.tech.map((tech, techIndex) => (
