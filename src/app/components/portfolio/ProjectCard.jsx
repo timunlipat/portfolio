@@ -27,7 +27,7 @@ const ProjectCard = ({ item, index }) => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
             >
-                <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-0 sm:gap-4'>
                     <motion.span
                         className='text-sm font-medium text-gray-800/70'
                         initial={{ opacity: 0, x: -20 }}
@@ -48,12 +48,12 @@ const ProjectCard = ({ item, index }) => {
 
                 <div className='grid md:grid-cols-2 gap-8 items-stretch'>
                     <motion.div
-                        className='flex flex-col gap-4'
+                        className='flex flex-col sm:gap-4 gap-0'
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <div className='relative overflow-hidden min-h-[350px] rounded-2xl'>
+                        <div className='relative overflow-hidden min-h-[250px] sm:min-h-[350px] rounded-2xl'>
                             <ImageCarousel images={item.images} />
                         </div>
                         <div className='flex flex-nowrap gap-2 mt-4'>
@@ -86,11 +86,11 @@ const ProjectCard = ({ item, index }) => {
                                         <Image
                                             src='/bitbucket.svg'
                                             alt='Bitbucket'
-                                            width={20}
-                                            height={20}
+                                            width={25}
+                                            height={25}
                                             className='text-white'
                                         />
-                                        Private Repository
+                                        Private Repo
                                     </div>
                                 ) : (
                                     item.github && (

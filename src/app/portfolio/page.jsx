@@ -26,7 +26,7 @@ const PortfolioPage = () => {
                 <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
                     <motion.div style={{ x }} className='flex'>
                         {/* Initial gradient panel */}
-                        <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300' />
+                        <div className='h-[120vh] w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300' />
 
                         {/* Project Cards */}
                         {projects.map((item, index) => (
