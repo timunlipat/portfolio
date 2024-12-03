@@ -49,7 +49,7 @@ const ProjectCard = ({ item, index }) => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <div className='relative overflow-hidden min-h-[200px] sm:min-h-[250px] md:min-h-[350px] rounded-xl sm:rounded-2xl'>
+                        <div className='relative overflow-hidden min-h-[350px] rounded-xl sm:rounded-2xl'>
                             <ImageCarousel images={item.images} />
                         </div>
                         <div className='flex flex-nowrap gap-1.5 sm:gap-2 mt-2 sm:mt-4'>
@@ -76,9 +76,9 @@ const ProjectCard = ({ item, index }) => {
                                 {item.desc}
                             </p>
 
-                            <div className='flex gap-2 sm:gap-4 mt-4 sm:mt-8 justify-start md:justify-end'>
+                            <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 mt-4 sm:mt-8 justify-start md:justify-end'>
                                 {item.id === 1 ? (
-                                    <div className='flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-white bg-[#0052CC] text-sm sm:text-base'>
+                                    <div className='w-full sm:w-auto flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-white bg-[#0052CC] text-sm sm:text-base'>
                                         <Image
                                             src='/bitbucket.svg'
                                             alt='Bitbucket'
@@ -92,7 +92,7 @@ const ProjectCard = ({ item, index }) => {
                                     item.github && (
                                         <motion.button
                                             onClick={handleCodeClick}
-                                            className='flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-lg text-sm sm:text-base'
+                                            className='w-full sm:w-auto flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-lg text-sm sm:text-base'
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                         >
@@ -104,7 +104,7 @@ const ProjectCard = ({ item, index }) => {
                                 {item.link && (
                                     <motion.button
                                         onClick={handleDemoClick}
-                                        className='flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors shadow-lg text-sm sm:text-base'
+                                        className='w-full sm:w-auto flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-white text-gray-900 font-medium hover:bg-gray-50 transition-colors shadow-lg text-sm sm:text-base'
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                     >
