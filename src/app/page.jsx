@@ -36,14 +36,14 @@ const Homepage = () => {
                         landscapes of tomorrow, one design at a time.
                     </p>
                     {/* Buttons */}
-                    <div className='flex gap-4 w-full'>
-                        <Link href='/portfolio'>
-                            <button className='p-4 rounded-lg ring-1 ring-black bg-black text-white'>
+                    <div className='flex justify-between sm:justify-start gap-4 w-full'>
+                        <Link href='/portfolio' className='w-full sm:w-auto'>
+                            <button className='w-full p-4 rounded-lg ring-1 ring-black bg-black text-white'>
                                 View My Work
                             </button>
                         </Link>
-                        <Link href='/contact'>
-                            <button className='p-4 rounded-lg ring-1 ring-black'>
+                        <Link href='/contact' className='w-full sm:w-auto'>
+                            <button className='w-full p-4 rounded-lg ring-1 ring-black'>
                                 Contact Me
                             </button>
                         </Link>
