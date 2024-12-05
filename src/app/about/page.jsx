@@ -28,30 +28,30 @@ const About = () => {
                     {/* Biography Container */}
                     <div className='flex flex-col gap-12 justify-center'>
                         {/* Biography Title */}
-                        <h1 className='font-bold text-2xl'>BIOGRAPHY</h1>
+                        <h1 className='font-bold text-2xl'>Introduction</h1>
                         {/* Biography Description */}
                         <p className='text-lg'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
+                            Hi, I’m Zamil, a self-taught Fullstack Web Developer
+                            specializing in React. I discovered my passion for
+                            coding later in life, but my fascination with
+                            technology started long ago. As a kid, I spent
+                            countless hours immersed in the world of video
+                            games, captivated by the creativity and complexity
+                            behind them. That early love for interactive
+                            experiences eventually grew into a desire to build
+                            my own digital solutions. Now, as a self-taught
+                            developer, I’m excited to bring my dedication and
+                            problem-solving skills to the professional world. I
+                            thrive on challenges—they push me to grow, learn,
+                            and continuously improve my craft. Whether it’s
+                            tackling complex technical problems or mastering new
+                            technologies, I love pushing the boundaries of what
+                            I can achieve. I believe that with perseverance and
+                            a passion for learning, it’s never too late to start
+                            a meaningful career in tech. Explore my Projects
+                            page to see what I’ve been working on—from
+                            innovative tools to responsive websites.
                         </p>
-                        {/* Biography Quote */}
-                        <span className='italic'>
-                            Time waits for no man. Unless that man is me.
-                        </span>
-                        {/* Biography Sign SVG*/}
-                        <div className='self-end'>
-                            <Image
-                                src='/signature-chuck.png'
-                                alt=''
-                                height={75}
-                                width={185}
-                            />
-                        </div>
                         {/* Biography Scroll SVG */}
                         <div className='w-6 h-6 mx-auto mt-8 animate-bounce text-gray-500'>
                             <svg
@@ -120,9 +120,6 @@ const About = () => {
                                 Redux
                             </div>
                             <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
-                                Freamer Motion
-                            </div>
-                            <div className='rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black'>
                                 Webpack
                             </div>
                         </motion.div>
@@ -162,7 +159,7 @@ const About = () => {
                             initial={{ x: '-300px' }}
                             animate={isExpereienceRefInView ? { x: 0 } : {}}
                         >
-                            {/* Experience List Item */}
+                            {/* Experience List Item 1*/}
                             <div className='flex justify-between h-48'>
                                 {/* Left */}
                                 <div className='w-1/3'>
@@ -185,7 +182,7 @@ const About = () => {
                                     </div>
                                 </div>
                                 {/* Center */}
-                                <div className='w-1/6'>
+                                <div className=''>
                                     {/* Line */}
                                     <div className='w-1 h-full bg-gray-600 rounded relative'>
                                         {/* Line Circle */}
@@ -196,12 +193,12 @@ const About = () => {
                                 <div className='w-1/3'></div>
                             </div>
 
-                            {/* Experience List Item */}
+                            {/* Experience List Item 2*/}
                             <div className='flex justify-between h-48'>
                                 {/* Left */}
                                 <div className='w-1/3'></div>
                                 {/* Center */}
-                                <div className='w-1/6'>
+                                <div className=''>
                                     {/* Line */}
                                     <div className='w-1 h-full bg-gray-600 rounded relative'>
                                         {/* Line Circle */}
@@ -230,7 +227,7 @@ const About = () => {
                                 </div>
                             </div>
 
-                            {/* Experience List Item */}
+                            {/* Experience List Item 3*/}
                             <div className='flex justify-between h-48'>
                                 {/* Left */}
                                 <div className='w-1/3'>
@@ -253,7 +250,7 @@ const About = () => {
                                     </div>
                                 </div>
                                 {/* Center */}
-                                <div className='w-1/6'>
+                                <div className=''>
                                     {/* Line */}
                                     <div className='w-1 h-full bg-gray-600 rounded relative'>
                                         {/* Line Circle */}
@@ -264,12 +261,12 @@ const About = () => {
                                 <div className='w-1/3'></div>
                             </div>
 
-                            {/* Experience List Item */}
+                            {/* Experience List Item 4*/}
                             <div className='flex justify-between h-48'>
                                 {/* Left */}
                                 <div className='w-1/3'></div>
                                 {/* Center */}
-                                <div className='w-1/6'>
+                                <div className=''>
                                     {/* Line */}
                                     <div className='w-1 h-1 bg-gray-600 rounded relative'>
                                         {/* Line Circle */}
