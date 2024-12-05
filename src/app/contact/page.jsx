@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Star, CheckCircle } from 'lucide-react';
+import { testimonials, features } from '../data/contact';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -15,30 +16,6 @@ const ContactPage = () => {
         e.preventDefault();
         console.log(formData);
     };
-
-    const testimonials = [
-        {
-            name: 'Dina Razak',
-            role: 'Owner',
-            company: "Dina's Bakery",
-            text: 'Our online orders have skyrocketed thanks to their amazing website! It’s easy to use, and their support team is super helpful. Highly recommend!',
-            rating: 5,
-        },
-        {
-            name: 'Pak Abu',
-            role: 'Owner',
-            company: 'Kedai Makan',
-            text: 'Exceeded all our expectations. Definitely akan recommend to others!',
-            rating: 5,
-        },
-    ];
-
-    const features = [
-        '24/7 Customer Support',
-        '100% Satisfaction Guaranteed',
-        'Fast Response Time',
-        'Expert Consultation',
-    ];
 
     return (
         <motion.div
