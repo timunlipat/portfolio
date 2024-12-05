@@ -10,10 +10,14 @@ const ExperienceItem = ({ data, index }) => {
 
     const Details = () => (
         <>
-            <div className='bg-white p-3 font-semibold rounded-lg'>{title}</div>
-            <div className='p-3 text-sm italic'>{description}</div>
-            <div className='p-3 text-red-400 text-sm font-semibold'>{date}</div>
-            <div className='p-1 rounded bg-white text-sm font-semibold w-fit'>
+            <div className='bg-white p-3 font-semibold rounded-lg w-fit mx-auto'>
+                {title}
+            </div>
+            <div className='py-3 text-sm italic'>{description}</div>
+            <div className='py-3 text-red-400 text-xs sm:sm font-semibold whitespace-nowrap overflow-hidden text-overflow-ellipsis'>
+                {date}
+            </div>
+            <div className='p-1 rounded bg-white text-xs sm:sm font-semibold w-fit'>
                 {company}
             </div>
         </>
@@ -21,13 +25,13 @@ const ExperienceItem = ({ data, index }) => {
 
     return (
         <div className='flex justify-between h-48'>
-            <div className='w-1/3'>{isEven && <Details />}</div>
+            <div className='w-2/5'>{isEven && <Details />}</div>
             <div>
                 <div className='w-1 h-full bg-gray-600 rounded relative'>
                     <div className='absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2' />
                 </div>
             </div>
-            <div className='w-1/3'>{!isEven && <Details />}</div>
+            <div className='w-2/5'>{!isEven && <Details />}</div>
         </div>
     );
 };
