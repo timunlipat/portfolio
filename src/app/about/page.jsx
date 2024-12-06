@@ -10,14 +10,14 @@ const ExperienceItem = ({ data, index }) => {
 
     const Details = () => (
         <>
-            <div className='bg-white p-3 font-semibold rounded-lg w-fit mx-auto'>
+            <div className='bg-white p-2 sm:p-3 font-semibold rounded-lg w-fit'>
                 {title}
             </div>
-            <div className='py-3 text-sm italic'>{description}</div>
-            <div className='py-3 text-red-400 text-xs sm:sm font-semibold whitespace-nowrap overflow-hidden text-overflow-ellipsis'>
+            <div className='py-1 text-sm italic'>{description}</div>
+            <div className='py-1 text-red-400 text-xs sm:sm font-semibold whitespace-nowrap overflow-hidden text-overflow-ellipsis'>
                 {date}
             </div>
-            <div className='p-1 rounded bg-white text-xs sm:sm font-semibold w-fit'>
+            <div className='p-1 sm:p-2 rounded bg-white text-xs sm:text-sm font-semibold w-fit'>
                 {company}
             </div>
         </>
