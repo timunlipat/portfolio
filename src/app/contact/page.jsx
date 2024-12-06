@@ -1,20 +1,42 @@
 'use client';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Star, CheckCircle } from 'lucide-react';
 import { testimonials, features } from '../data/contact';
+import emailjs from '@emailjs/browser';
+import Toast from '../components/Toast';
 
 const ContactPage = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
+    const form = useRef();
     const [isHovered, setIsHovered] = useState(false);
+    const [toast, setToast] = useState(null);
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(formData);
+
+        emailjs
+            .sendForm(
+                process.env.NEXT_PUBLIC_SERVICE_ID,
+                process.env.NEXT_PUBLIC_TEMPLATE_ID,
+                form.current,
+                process.env.NEXT_PUBLIC_PUBLIC_KEY
+            )
+            .then(() => {
+                setToast({
+                    message: 'Message sent successfully!',
+                    type: 'success',
+                });
+                form.current.reset();
+                setTimeout(() => setToast(null), 5000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                setToast({
+                    message: 'Failed to send message. Please try again.',
+                    type: 'error',
+                });
+                setTimeout(() => setToast(null), 5000);
+            });
     };
 
     return (
@@ -185,6 +207,7 @@ const ContactPage = () => {
                             className='relative'
                         >
                             <form
+                                ref={form}
                                 onSubmit={handleSubmit}
                                 className='bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'
                             >
@@ -194,13 +217,15 @@ const ContactPage = () => {
                                 <div className='space-y-6'>
                                     {[
                                         {
-                                            id: 'name',
+                                            id: 'user_name',
+                                            name: 'user_name',
                                             label: 'Name',
                                             type: 'text',
                                             placeholder: 'Name',
                                         },
                                         {
-                                            id: 'email',
+                                            id: 'user_email',
+                                            name: 'user_email',
                                             label: 'Email',
                                             type: 'email',
                                             placeholder: 'example@email.com',
@@ -219,15 +244,9 @@ const ContactPage = () => {
                                             <input
                                                 type={field.type}
                                                 id={field.id}
+                                                name={field.name}
                                                 className='block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
                                                 placeholder={field.placeholder}
-                                                onChange={e =>
-                                                    setFormData({
-                                                        ...formData,
-                                                        [field.id]:
-                                                            e.target.value,
-                                                    })
-                                                }
                                             />
                                         </motion.div>
                                     ))}
@@ -240,15 +259,10 @@ const ContactPage = () => {
                                         </label>
                                         <textarea
                                             id='message'
+                                            name='user_message'
                                             rows={6}
                                             className='block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
                                             placeholder='Tell us about your project...'
-                                            onChange={e =>
-                                                setFormData({
-                                                    ...formData,
-                                                    message: e.target.value,
-                                                })
-                                            }
                                         />
                                     </motion.div>
 
@@ -276,6 +290,15 @@ const ContactPage = () => {
                     </div>
                 </div>
             </div>
+            <AnimatePresence>
+                {toast && (
+                    <Toast
+                        message={toast.message}
+                        type={toast.type}
+                        onClose={() => setToast(null)}
+                    />
+                )}
+            </AnimatePresence>
         </motion.div>
     );
 };
