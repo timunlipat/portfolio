@@ -84,13 +84,13 @@ const ContactPage = () => {
                                         {
                                             icon: Mail,
                                             label: 'Email',
-                                            value: 'contact@example.com',
+                                            value: 'zamil.aziz.dev@gmail.com',
                                             bg: 'purple',
                                         },
                                         {
                                             icon: Phone,
                                             label: 'Phone',
-                                            value: '+60 12-345 6789',
+                                            value: '+60 14-764 2021',
                                             bg: 'indigo',
                                         },
                                         {
@@ -197,13 +197,13 @@ const ContactPage = () => {
                                             id: 'name',
                                             label: 'Name',
                                             type: 'text',
-                                            placeholder: 'John Doe',
+                                            placeholder: 'Name',
                                         },
                                         {
                                             id: 'email',
                                             label: 'Email',
                                             type: 'email',
-                                            placeholder: 'john@example.com',
+                                            placeholder: 'example@email.com',
                                         },
                                     ].map(field => (
                                         <motion.div
