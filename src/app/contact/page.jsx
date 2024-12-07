@@ -245,7 +245,7 @@ const ContactPage = () => {
                                                 type={field.type}
                                                 id={field.id}
                                                 name={field.name}
-                                                className='block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
+                                                className='block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300 z-20'
                                                 placeholder={field.placeholder}
                                             />
                                         </motion.div>

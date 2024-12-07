@@ -49,7 +49,7 @@ const ProjectCard = ({ item, index }) => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
-                        <div className='relative overflow-hidden min-h-[350px] rounded-xl sm:rounded-2xl'>
+                        <div className='relative overflow-hidden min-h-[280px] sm:min-h-[350px] rounded-xl sm:rounded-2xl'>
                             <ImageCarousel images={item.images} />
                         </div>
                         <div className='flex flex-nowrap gap-1.5 sm:gap-2 mt-2 sm:mt-4'>
@@ -76,7 +76,7 @@ const ProjectCard = ({ item, index }) => {
                                 {item.desc}
                             </p>
 
-                            <div className='flex sflex-row gap-3 sm:gap-4 mt-4 sm:mt-8 justify-start md:justify-end'>
+                            <div className='flex sflex-row gap-3 sm:gap-4 mt-8 justify-start md:justify-end'>
                                 {item.id === 1 ? (
                                     <div className='w-full sm:w-auto flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-4 rounded-lg font-medium text-white bg-[#0052CC] text-sm sm:text-base'>
                                         <Image

@@ -14,7 +14,7 @@ export const projects = [
             'Chart.js',
             'SASS',
         ],
-        desc: 'A feature-rich merchant portal for event organizers to manage their events, handle ticket sales, and track performance. Includes real-time analytics, QR ticket scanning, and customizable event pages with a modern React-based interface.',
+        desc: 'A feature-rich portal designed to help merchants, admins, and agents streamline event management, handle ticket sales, and track performance. Each user role has tailored features and interfaces to enhance usability and efficiency. Includes real-time analytics, QR ticket scanning, and customizable event pages with a modern React-based interface. I worked closely with a senior developer to implement core features and ensure high-quality deliverables.',
         images: [
             '/projects/project1/1.png',
             '/projects/project1/2.png',
@@ -24,10 +24,9 @@ export const projects = [
             '/projects/project1/6.png',
         ],
         link: 'https://merchants.eventlah.com/',
-        // github: 'https://bitbucket.org/eventador-operating-system/eventlah-react-merchant/src/main/',
         github: null,
-        isPrivate: true,
     },
+
     {
         id: 2,
         color: 'from-blue-300 to-violet-300',
@@ -43,7 +42,7 @@ export const projects = [
             'Cloudinary',
             'Leaflet Maps',
         ],
-        desc: 'A full-stack Airbnb-inspired property rental platform built following a comprehensive tutorial. Features include user authentication, property listings with image uploads, interactive maps, real-time booking system, and responsive design. Implements server-side rendering for optimal performance and SEO, state management with Zustand, and secure user sessions via NextAuth.js.',
+        desc: 'Built step-by-step by following a comprehensive Airbnb-inspired tutorial, this project taught me the intricacies of full-stack development. It includes features like secure user authentication, property listings with image uploads, and real-time bookings. This hands-on experience was instrumental in deepening my understanding of Next.js, Prisma, and server-side rendering.',
         images: [
             '/projects/project2/1.png',
             '/projects/project2/2.png',
@@ -67,7 +66,7 @@ export const projects = [
             'Stripe',
             'Zustand',
         ],
-        desc: 'A Duolingo-inspired language learning platform built following an in-depth tutorial. Features user authentication, interactive lessons, progress tracking, and premium subscriptions via Stripe. Utilizes a sleek UI with Radix components, serverless database with Neon, and efficient state management using Zustand.',
+        desc: 'This Duolingo-inspired project was crafted by following an in-depth tutorial, where I learned about modern tech stacks and how to build an interactive web application. Developing features like progress tracking, interactive lessons, and subscription handling via Stripe provided hands-on experience with state management and database integration.',
         images: [
             '/projects/project3/1.png',
             '/projects/project3/2.png',
@@ -87,12 +86,11 @@ export const projects = [
             'TypeScript',
             'Three.js',
             'React Three Fiber',
-            'Framer Motion',
             'Tailwind CSS',
             'Lottie Animations',
             'Sentry',
         ],
-        desc: 'A modern portfolio website template built following a tutorial. Features 3D animations, interactive globe visualization, and smooth transitions. Utilizes Three.js and React Three Fiber for immersive 3D elements, enhanced with Framer Motion animations. Implements dark mode and error tracking via Sentry.',
+        desc: 'This portfolio project was developed by closely following a tutorial that introduced me to advanced front-end techniques. Step-by-step, I learned to create immersive 3D animations with Three.js. This experience not only helped me build a stunning personal website but also sharpened my skills in crafting visually appealing interfaces.',
         images: [
             '/projects/project4/1.png',
             '/projects/project4/2.png',

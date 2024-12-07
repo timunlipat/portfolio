@@ -34,8 +34,8 @@ const ImageCarousel = ({ images, children }) => {
     }, [showNextImage]);
 
     return (
-        <div className='relative w-full h-full shadow-2xl group'>
-            <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10' />
+        <div className='relative w-full h-full shadow-2xl group z-10'>
+            {/* <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20' /> */}
 
             <AnimatePresence initial={false}>
                 <motion.div
@@ -59,14 +59,14 @@ const ImageCarousel = ({ images, children }) => {
 
             <button
                 onClick={showPrevImage}
-                className='absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 p-2 bg-black/30 hover:bg-black/50 rounded-full'
+                className='absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 p-2 bg-black/30 hover:bg-black/50 rounded-full'
             >
                 <ChevronLeft className='w-8 h-8 text-white' />
             </button>
 
             <button
                 onClick={showNextImage}
-                className='absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 p-2 bg-black/30 hover:bg-black/50 rounded-full'
+                className='absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 p-2 bg-black/30 hover:bg-black/50 rounded-full'
             >
                 <ChevronRight className='w-8 h-8 text-white' />
             </button>
