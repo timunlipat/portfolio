@@ -22,14 +22,14 @@ export const experienceData = [
         title: 'Freelance Fullstack Web Developer',
         description: 'Built responsive web apps using React and Material-UI.',
         date: 'July 2024 - Present',
-        company: 'Nucleus System SDN. BHD.',
+        company: 'Nucleus System Sdn. Bhd.',
     },
     {
         title: 'Customer Service Associate',
         description:
             'Handled customer inquiries and reservations professionally.',
         date: 'July 2023 - May 2024',
-        company: 'Denave SDN. BHD.',
+        company: 'Denave Sdn. Bhd.',
     },
     {
         title: 'Professional Esports Competitor',

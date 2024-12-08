@@ -58,13 +58,13 @@ const ContactPage = () => {
                         <span className='inline-block px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4'>
                             Let&apos;s Work Together
                         </span>
-                        <h1 className='text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 pb-4'>
+                        <h1 className='text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600'>
                             Transform Your Ideas Into Reality
                         </h1>
-                        <p className='text-gray-600 text-lg md:text-xl max-w-2xl mx-auto'>
+                        {/* <p className='text-gray-600 text-lg md:text-xl max-w-2xl mx-auto'>
                             Join hundreds of satisfied clients who have brought
                             their visions to life
-                        </p>
+                        </p> */}
                     </motion.div>
 
                     {/* Trust Indicators */}
