@@ -89,6 +89,7 @@ const Navbar = () => {
                     <NavLink link={link} key={link.title} />
                 ))}
             </div>
+
             {/* Logo */}
             <div className='md:hidden lg:flex xl:w-1/3 xl:justify-center'>
                 <Link
@@ -101,24 +102,25 @@ const Navbar = () => {
                     </span>
                 </Link>
             </div>
+
             {/* Social */}
-            <div className='hidden md:flex gap-4 w-1/3'>
-                <Link href='/'>
+            <div className='hidden md:flex gap-4 w-1/3 justify-end'>
+                <Link href='#'>
                     <Image src='/github.png' alt='' width={24} height={24} />
                 </Link>
-                <Link href='/'>
+                <Link href='#'>
                     <Image src='/dribbble.png' alt='' width={24} height={24} />
                 </Link>
-                <Link href='/'>
+                <Link href='#'>
                     <Image src='/instagram.png' alt='' width={24} height={24} />
                 </Link>
-                <Link href='/'>
+                <Link href='#'>
                     <Image src='/facebook.png' alt='' width={24} height={24} />
                 </Link>
-                <Link href='/'>
+                <Link href='#'>
                     <Image src='/pinterest.png' alt='' width={24} height={24} />
                 </Link>
-                <Link href='/'>
+                <Link href='#'>
                     <Image src='/linkedin.png' alt='' width={24} height={24} />
                 </Link>
             </div>
