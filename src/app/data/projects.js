@@ -14,7 +14,7 @@ export const projects = [
             'Chart.js',
             'SASS',
         ],
-        desc: 'A feature-rich portal designed to help merchants, admins, and agents streamline event management, handle ticket sales, and track performance. Each user role has tailored features and interfaces to enhance usability and efficiency. Includes real-time analytics, QR ticket scanning, and customizable event pages with a modern React-based interface. I worked closely with a senior developer to implement core features and ensure high-quality deliverables.',
+        desc: 'Developed as part of my role at Nucleus System Sdn. Bhd., this fully functional, feature-rich portal helps merchants, admins, and agents streamline event management, manage ticket sales, and track performance. Each user role is equipped with tailored features and interfaces to enhance usability and efficiency. The portal includes real-time analytics, QR ticket scanning, and customizable event pages, all powered by a modern React-based interface. I collaborated closely with a senior developer to implement core features and deliver high-quality results.',
         images: [
             '/projects/project1/1.png',
             '/projects/project1/2.png',
@@ -26,7 +26,6 @@ export const projects = [
         link: 'https://merchants.eventlah.com/',
         github: null,
     },
-
     {
         id: 2,
         color: 'from-blue-300 to-violet-300',
@@ -42,7 +41,7 @@ export const projects = [
             'Cloudinary',
             'Leaflet Maps',
         ],
-        desc: 'Built step-by-step by following a comprehensive Airbnb-inspired tutorial, this project taught me the intricacies of full-stack development. It includes features like secure user authentication, property listings with image uploads, and real-time bookings. This hands-on experience was instrumental in deepening my understanding of Next.js, Prisma, and server-side rendering.',
+        desc: 'An Airbnb-inspired full-stack application developed while following a comprehensive tutorial. It features secure user authentication, property listings with image uploads, and real-time bookings. While the project began as a learning exercise, I adapted and expanded on the tutorial to deepen my understanding of Next.js, Prisma, and server-side rendering.',
         images: [
             '/projects/project2/1.png',
             '/projects/project2/2.png',
@@ -66,7 +65,7 @@ export const projects = [
             'Stripe',
             'Zustand',
         ],
-        desc: 'This Duolingo-inspired project was crafted by following an in-depth tutorial, where I learned about modern tech stacks and how to build an interactive web application. Developing features like progress tracking, interactive lessons, and subscription handling via Stripe provided hands-on experience with state management and database integration.',
+        desc: 'A Duolingo-inspired web application built as part of an in-depth tutorial. This project provided hands-on experience with progress tracking, interactive lessons, and subscription handling via Stripe. I applied the concepts learned to solidify my understanding of state management and database integration.',
         images: [
             '/projects/project3/1.png',
             '/projects/project3/2.png',
@@ -90,7 +89,7 @@ export const projects = [
             'Lottie Animations',
             'Sentry',
         ],
-        desc: 'This portfolio project was developed by closely following a tutorial that introduced me to advanced front-end techniques. Step-by-step, I learned to create immersive 3D animations with Three.js. This experience not only helped me build a stunning personal website but also sharpened my skills in crafting visually appealing interfaces.',
+        desc: 'A personal portfolio website built with advanced front-end techniques learned through a tutorial. The project includes immersive 3D animations using Three.js and React Three Fiber, showcasing both technical skills and creative design. This experience refined my ability to create visually engaging user interfaces.',
         images: [
             '/projects/project4/1.png',
             '/projects/project4/2.png',
