@@ -1,10 +1,12 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import ImageCarousel from './imageCarousel';
 import TechBadge from './TechBadge';
 
-const ProjectCard = ({ item, index }) => {
+const ProjectCard = memo(({ item, index }) => {
+    // Move handlers outside render cycle
     const handleCodeClick = () => {
         if (item.github) window.open(item.github, '_blank');
     };
@@ -22,6 +24,7 @@ const ProjectCard = ({ item, index }) => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
+                viewport={{ once: true }} // Only animate once
             >
                 <div className='flex flex-col gap-0 sm:gap-4'>
                     <motion.span
@@ -29,6 +32,7 @@ const ProjectCard = ({ item, index }) => {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
                     >
                         Project {index + 1}
                     </motion.span>
@@ -37,6 +41,7 @@ const ProjectCard = ({ item, index }) => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
+                        viewport={{ once: true }}
                     >
                         {item.title}
                     </motion.h2>
@@ -48,8 +53,9 @@ const ProjectCard = ({ item, index }) => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
                     >
-                        <div className='relative overflow-hidden min-h-[280px] sm:min-h-[350px] rounded-xl sm:rounded-2xl'>
+                        <div className='relative overflow-hidden min-h-[280px] sm:min-h-[350px] rounded-xl sm:rounded-2xl will-change-transform'>
                             <ImageCarousel images={item.images} />
                         </div>
                         <div className='flex flex-nowrap gap-1.5 sm:gap-2 mt-2 sm:mt-4'>
@@ -70,6 +76,7 @@ const ProjectCard = ({ item, index }) => {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
+                        viewport={{ once: true }}
                     >
                         <div className='flex flex-col justify-between h-full'>
                             <p className='text-sm sm:text-base md:text-lg text-gray-800/90 leading-snug sm:leading-relaxed'>
@@ -85,6 +92,8 @@ const ProjectCard = ({ item, index }) => {
                                             width={20}
                                             height={20}
                                             className='text-white w-4 h-4 sm:w-5 sm:h-5'
+                                            loading='lazy'
+                                            priority={false}
                                         />
                                         Private Repo
                                     </div>
@@ -119,6 +128,8 @@ const ProjectCard = ({ item, index }) => {
             </motion.div>
         </div>
     );
-};
+});
+
+ProjectCard.displayName = 'ProjectCard';
 
 export default ProjectCard;
