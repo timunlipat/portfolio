@@ -31,7 +31,7 @@ export const projects = [
         color: 'from-blue-300 to-violet-300',
         title: 'Milbnb',
         tech: [
-            'Next.js 14',
+            'Next.js',
             'TypeScript',
             'Tailwind CSS',
             'Prisma',
@@ -55,7 +55,7 @@ export const projects = [
         color: 'from-violet-300 to-purple-300',
         title: 'Mingo',
         tech: [
-            'Next.js 14',
+            'Next.js',
             'TypeScript',
             'Tailwind CSS',
             'Drizzle ORM',
@@ -81,7 +81,7 @@ export const projects = [
         color: 'from-purple-300 to-red-300',
         title: 'Portfolio Website',
         tech: [
-            'Next.js 14',
+            'Next.js',
             'TypeScript',
             'Three.js',
             'React Three Fiber',
