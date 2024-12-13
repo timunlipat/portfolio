@@ -97,7 +97,7 @@ const Navbar = () => {
             </div>
 
             {/* Links */}
-            <div className='hidden md:flex gap-4 w-1/3'>
+            <div className='hidden md:flex gap-4 lg:gap-6 w-1/3 justify-center'>
                 {links.map(link => (
                     <NavLink link={link} key={link.title} />
                 ))}
