@@ -228,7 +228,7 @@ const ContactPage = () => {
             transition={{ duration: 1 }}
         >
             <div className='h-full overflow-scroll'>
-                <div className='p-4 md:p-8 lg:p-12'>
+                <div className='p-4 md:p-8 lg:p-12 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
                     <div className='max-w-7xl mx-auto'>
                         <Header />
                         <Features />

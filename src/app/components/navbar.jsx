@@ -83,15 +83,8 @@ const Navbar = () => {
 
     return (
         <div className='h-full flex justify-between items-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl'>
-            {/* Links */}
-            <div className='hidden md:flex gap-4 w-1/3'>
-                {links.map(link => (
-                    <NavLink link={link} key={link.title} />
-                ))}
-            </div>
-
             {/* Logo */}
-            <div className='md:hidden lg:flex xl:w-1/3 xl:justify-center'>
+            <div className='md:hidden lg:flex lg:w-1/3 lg:justify-start'>
                 <Link
                     href='/'
                     className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center'
@@ -101,6 +94,13 @@ const Navbar = () => {
                         Tech
                     </span>
                 </Link>
+            </div>
+
+            {/* Links */}
+            <div className='hidden md:flex gap-4 w-1/3'>
+                {links.map(link => (
+                    <NavLink link={link} key={link.title} />
+                ))}
             </div>
 
             {/* Social */}
