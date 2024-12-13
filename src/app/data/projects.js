@@ -23,7 +23,8 @@ export const projects = [
             '/projects/project1/5.png',
             '/projects/project1/6.png',
         ],
-        link: 'https://merchants.eventlah.com/',
+        // link: 'https://merchants.eventlah.com/',
+        link: null,
         github: null,
     },
     {
