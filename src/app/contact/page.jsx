@@ -23,6 +23,7 @@ const Header = memo(() => (
         </h1>
     </motion.div>
 ));
+Header.displayName = 'Header';
 
 // Features Section Component
 const Features = memo(() => (
@@ -43,6 +44,7 @@ const Features = memo(() => (
         ))}
     </motion.div>
 ));
+Features.displayName = 'Features';
 
 // Contact Info Item Component
 const ContactInfoItem = memo(({ item }) => (
@@ -63,6 +65,7 @@ const ContactInfoItem = memo(({ item }) => (
         </div>
     </motion.div>
 ));
+ContactInfoItem.displayName = 'ContactInfoItem';
 
 // Testimonial Component
 const TestimonialCard = memo(({ testimonial }) => (
@@ -99,6 +102,7 @@ const TestimonialCard = memo(({ testimonial }) => (
         <p className='text-gray-700 mt-4'>{testimonial.text}</p>
     </motion.div>
 ));
+TestimonialCard.displayName = 'TestimonialCard';
 
 // Form Input Component
 const FormInput = memo(({ field, register }) => (
@@ -119,6 +123,7 @@ const FormInput = memo(({ field, register }) => (
         />
     </motion.div>
 ));
+FormInput.displayName = 'FormInput';
 
 // Submit Button Component
 const SubmitButton = memo(({ isHovered, setIsHovered }) => (
@@ -139,6 +144,7 @@ const SubmitButton = memo(({ isHovered, setIsHovered }) => (
         </motion.div>
     </motion.button>
 ));
+SubmitButton.displayName = 'SubmitButton';
 
 // Contact Info Section
 const contactInfo = [
