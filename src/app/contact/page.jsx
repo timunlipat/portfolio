@@ -227,91 +227,96 @@ const ContactPage = () => {
             animate={{ y: '0%' }}
             transition={{ duration: 1 }}
         >
-            <div className='relative bg-gradient-to-b from-indigo-50 via-purple-50 to-white p-4 md:p-8 lg:p-12'>
-                <div className='max-w-7xl mx-auto'>
-                    <Header />
-                    <Features />
-                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16'>
-                        {/* Left Column - Contact Info & Testimonials */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 1.2 }}
-                            className='space-y-8'
-                        >
-                            {/* Contact Info Card */}
-                            <div className='bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'>
-                                <h2 className='text-2xl font-bold text-gray-900 mb-6'>
-                                    Get in Touch
-                                </h2>
-                                <div className='space-y-6'>
-                                    {contactInfo.map((item, index) => (
-                                        <ContactInfoItem
-                                            key={index}
-                                            item={item}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
+            <div className='h-full overflow-scroll'>
+                <div className='p-4 md:p-8 lg:p-12'>
+                    <div className='max-w-7xl mx-auto'>
+                        <Header />
+                        <Features />
 
-                            {/* Testimonials */}
-                            <div className='space-y-4'>
-                                {testimonials.map((testimonial, index) => (
-                                    <TestimonialCard
-                                        key={index}
-                                        testimonial={testimonial}
-                                    />
-                                ))}
-                            </div>
-                        </motion.div>
-
-                        {/* Right Column - Contact Form */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 1.2 }}
-                            className='relative'
-                        >
-                            <form
-                                ref={form}
-                                onSubmit={handleSubmit}
-                                className='bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16'>
+                            {/* Left Column - Contact Info & Testimonials */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 1.2 }}
+                                className='space-y-8'
                             >
-                                <h2 className='text-2xl font-bold text-gray-900 mb-6'>
-                                    Send Us a Message
-                                </h2>
-                                <div className='space-y-6'>
-                                    {formFields.map(field => (
-                                        <FormInput
-                                            key={field.id}
-                                            field={field}
+                                {/* Contact Info Card */}
+                                <div className='bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'>
+                                    <h2 className='text-2xl font-bold text-gray-900 mb-6'>
+                                        Get in Touch
+                                    </h2>
+                                    <div className='space-y-6'>
+                                        {contactInfo.map((item, index) => (
+                                            <ContactInfoItem
+                                                key={index}
+                                                item={item}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Testimonials */}
+                                <div className='space-y-4'>
+                                    {testimonials.map((testimonial, index) => (
+                                        <TestimonialCard
+                                            key={index}
+                                            testimonial={testimonial}
                                         />
                                     ))}
-
-                                    <motion.div whileHover={{ scale: 1.01 }}>
-                                        <label
-                                            htmlFor='message'
-                                            className='block text-sm font-medium text-gray-700 mb-2'
-                                        >
-                                            Message
-                                        </label>
-                                        <textarea
-                                            id='message'
-                                            name='user_message'
-                                            rows={6}
-                                            className='block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
-                                            placeholder='Tell us about your project...'
-                                            disabled={isSubmitting}
-                                        />
-                                    </motion.div>
-
-                                    <SubmitButton
-                                        isHovered={isHovered}
-                                        setIsHovered={setIsHovered}
-                                    />
                                 </div>
-                            </form>
-                        </motion.div>
+                            </motion.div>
+
+                            {/* Right Column - Contact Form */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 1.2 }}
+                                className='relative'
+                            >
+                                <form
+                                    ref={form}
+                                    onSubmit={handleSubmit}
+                                    className='bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'
+                                >
+                                    <h2 className='text-2xl font-bold text-gray-900 mb-6'>
+                                        Send Us a Message
+                                    </h2>
+                                    <div className='space-y-6'>
+                                        {formFields.map(field => (
+                                            <FormInput
+                                                key={field.id}
+                                                field={field}
+                                            />
+                                        ))}
+
+                                        <motion.div
+                                            whileHover={{ scale: 1.01 }}
+                                        >
+                                            <label
+                                                htmlFor='message'
+                                                className='block text-sm font-medium text-gray-700 mb-2'
+                                            >
+                                                Message
+                                            </label>
+                                            <textarea
+                                                id='message'
+                                                name='user_message'
+                                                rows={6}
+                                                className='block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
+                                                placeholder='Tell us about your project...'
+                                                disabled={isSubmitting}
+                                            />
+                                        </motion.div>
+
+                                        <SubmitButton
+                                            isHovered={isHovered}
+                                            setIsHovered={setIsHovered}
+                                        />
+                                    </div>
+                                </form>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>
