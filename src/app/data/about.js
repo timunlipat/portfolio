@@ -32,7 +32,7 @@ export const experienceData = [
         company: 'Denave Sdn. Bhd.',
     },
     {
-        title: 'Professional Esports Competitor',
+        title: 'Competitive Esports Player',
         description:
             'Competed in national and international esports tournaments.',
         date: '2010 - 2022',
