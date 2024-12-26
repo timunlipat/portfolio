@@ -10,7 +10,7 @@ export const projects = [
             'Radix UI',
             'Shadcn/ui',
         ],
-        desc: 'DapurSegar is a custom ecommerce website I am developing from scratch for buying fresh groceries and market goods. The front-end is being built with Next.js for server-side rendering and optimizations, Tailwind CSS for styling, and Radix UI components for accessible UI. Key features currently include product listings, filters, shopping cart, and checkout. While still a work in progress with more enhancements planned, the aim is to create a high-quality, performant ecommerce site that will connect consumers with the best offerings of traditional markets in a modern digital experience.',
+        desc: 'DapurSegar is a custom ecommerce website I am developing from scratch for buying fresh groceries and market goods. The front-end is being built with Next.js for server-side rendering and optimizations, Tailwind CSS for styling, and Radix UI components for accessible UI. Key features currently include product listings, filters, shopping cart, checkout, and user accounts. While still a work in progress with more enhancements planned, the aim is to create a high-quality, performant ecommerce site that will connect consumers with the best offerings of traditional markets in a modern digital experience.',
         images: [
             '/projects/project1/1.png',
             '/projects/project1/2.png',

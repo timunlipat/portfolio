@@ -84,7 +84,7 @@ const ProjectCard = memo(({ item, index }) => {
                             </p>
 
                             <div className='flex sflex-row gap-3 sm:gap-4 mt-8 justify-start md:justify-end'>
-                                {item.title === 'Eventlah' ? (
+                                {item.id === 2 ? (
                                     <div className='w-full sm:w-auto flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-4 rounded-lg font-medium text-white bg-[#0052CC] text-sm sm:text-base'>
                                         <Image
                                             src='/bitbucket.svg'
