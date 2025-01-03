@@ -24,7 +24,7 @@ const Header = memo(() => (
                 Ready to Build the Future Together
             </h1>
             <p className='text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed'>
-                Seeking impactful opportunities and meaningful collaborations. Let’s bring innovative ideas to life.
+                Seeking impactful opportunities and meaningful collaborations. Let's bring innovative ideas to life.
             </p>
         </motion.div>
     </motion.div>
@@ -36,13 +36,14 @@ const ContactInfoItem = memo(({ item }) => (
     <motion.div
         className='flex items-center space-x-4 hover:translate-x-2 transition-transform duration-300'
         whileHover={{ scale: 1.02 }}
+        transition={{ duration: 1 }}
     >
         <div className={`bg-${item.bg}-100 p-4 rounded-full shadow-inner`}>
             <item.icon className={`w-6 h-6 text-${item.bg}-600`} />
         </div>
         <div>
             <h3 className='font-medium text-gray-900'>{item.label}</h3>
-            <p className={`text-gray-600 hover:text-${item.bg}-600 transition-colors`}>
+            <p className={`text-gray-600 hover:text-${item.bg}-600 transition-colors duration-300`}>
                 {item.value}
             </p>
         </div>
@@ -52,7 +53,11 @@ ContactInfoItem.displayName = 'ContactInfoItem';
 
 // Form Input Component
 const FormInput = memo(({ field }) => (
-    <motion.div whileHover={{ scale: 1.01 }} className="w-full">
+    <motion.div 
+        whileHover={{ scale: 1.01 }} 
+        transition={{ duration: 1 }}
+        className="w-full"
+    >
         <label
             htmlFor={field.id}
             className='block text-sm font-medium text-gray-700 mb-2'
@@ -77,13 +82,14 @@ const SubmitButton = memo(({ isHovered, setIsHovered }) => (
         className='group w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium py-4 px-6 rounded-lg shadow-lg flex items-center justify-center space-x-2 hover:shadow-xl transition-all duration-300'
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.95 }}
+        transition={{ duration: 1 }}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
     >
         <span className="text-lg">Send Message</span>
         <motion.div
             animate={isHovered ? { x: 5 } : { x: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 1 }}
         >
             <Send className='w-5 h-5' />
         </motion.div>
@@ -96,7 +102,7 @@ const SkillCard = memo(({ skill }) => (
     <motion.div
         className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300"
         whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 1 }}
     >
         <div className="flex items-start space-x-4">
             <div className={`w-12 h-12 rounded-xl bg-${skill.color}-100 flex items-center justify-center`}>
@@ -227,7 +233,7 @@ const ContactPage = () => {
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.6 }}
+                                transition={{ delay: 1 }}
                                 className='space-y-8'
                             >
                                 <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
@@ -242,7 +248,7 @@ const ContactPage = () => {
                             <motion.div
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.6 }}
+                                transition={{ delay: 1 }}
                                 className='space-y-8'
                             >
                                 {/* Contact Info Card */}
@@ -279,7 +285,10 @@ const ContactPage = () => {
                                             ))}
                                         </div>
 
-                                        <motion.div whileHover={{ scale: 1.01 }}>
+                                        <motion.div 
+                                            whileHover={{ scale: 1.01 }}
+                                            transition={{ duration: 1 }}
+                                        >
                                             <label
                                                 htmlFor='message'
                                                 className='block text-sm font-medium text-gray-700 mb-2'
