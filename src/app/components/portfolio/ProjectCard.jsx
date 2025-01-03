@@ -2,7 +2,8 @@ import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import ImageCarousel from './ImageCarousel';
+// import ImageCarousel from './ImageCarousel';
+import ImageCarousel from './imageCarousel';
 import TechBadge from './TechBadge';
 
 const ProjectCard = memo(({ item, index }) => {

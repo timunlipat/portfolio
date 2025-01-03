@@ -10,7 +10,7 @@ const SkillCard = ({ skill, index }) => {
             y: 0,
             transition: {
                 duration: 0.5,
-                delay: index * 0.1, // Stagger effect
+                delay: index * 0.1,
                 ease: "easeOut"
             }
         }
