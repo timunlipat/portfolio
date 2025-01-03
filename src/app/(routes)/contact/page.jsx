@@ -1,11 +1,11 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Header } from '@/components/contact/Header';
-import { ContactInfo } from '@/components/contact/ContactInfo';
-import { SkillsShowcase } from '@/components/contact/SkillsShowcase';
-import { ContactForm } from '@/components/contact/ContactForm';
-import Toast from '@/components/ui/Toast';
+import { Header } from '../../components/contact/Header';
+import { ContactInfo } from '../../components/contact/ContactInfo';
+import { SkillsShowcase } from '../../components/contact/SkillsShowcase';
+import { ContactForm } from '../../components/contact/ContactForm';
+import Toast from '../../components/ui/Toast';
 
 export default function ContactPage() {
     const [toast, setToast] = useState(null);
