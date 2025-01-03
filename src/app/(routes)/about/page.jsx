@@ -1,8 +1,8 @@
 'use client';
 import { motion, useInView, useScroll } from 'framer-motion';
 import { useRef } from 'react';
-import Brain from '../components/brain';
-import { introData, skillsData, experienceData } from '../data/about';
+import Brain from '../../components/ui/Brain';
+import { introData, skillsData, experienceData } from '../../data/about';
 
 const ExperienceItem = ({ data, index }) => {
     const isEven = index % 2 === 0;

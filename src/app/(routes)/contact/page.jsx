@@ -3,9 +3,9 @@
 import { useState, useRef, useCallback, memo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Star, CheckCircle } from 'lucide-react';
-import { testimonials, features } from '../data/contact';
+import { testimonials, features } from '../../data/contact';
 import emailjs from '@emailjs/browser';
-import Toast from '../components/Toast';
+import Toast from '../../components/ui/Toast';
 
 // Header Section Component
 const Header = memo(() => (

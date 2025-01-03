@@ -1,10 +1,10 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useMemo } from 'react';
-import CallToAction from '../components/portfolio/CallToAction';
-import HeroSection from '../components/portfolio/HeroSection';
-import ProjectCard from '../components/portfolio/ProjectCard';
-import { projects } from '../data/projects';
+import CallToAction from '../../components/portfolio/CallToAction';
+import HeroSection from '../../components/portfolio/HeroSection';
+import ProjectCard from '../../components/portfolio/ProjectCard';
+import { projects } from '../../data/projects';
 
 const PortfolioPage = () => {
     const ref = useRef();
