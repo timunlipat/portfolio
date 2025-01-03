@@ -1,50 +1,35 @@
-// ContactPage.jsx
 'use client';
 import { useState, useRef, useCallback, memo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Star, CheckCircle } from 'lucide-react';
-import { testimonials, features } from '../../data/contact';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { skills } from '../../data/contact';
 import emailjs from '@emailjs/browser';
 import Toast from '../../components/ui/Toast';
 
 // Header Section Component
 const Header = memo(() => (
     <motion.div
-        className='text-center mb-16 relative'
+        className='text-center pt-0 pb-16'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2 }}
+        transition={{ delay: 1 }}
     >
-        <span className='inline-block px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4'>
-            Let&apos;s Work Together
-        </span>
-        <h1 className='text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600'>
-            Transform Your Ideas Into Reality
-        </h1>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="mx-auto"
+        >
+            <h1 className='text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 pb-3 mb-4 leading-tight'>
+                Ready to Build the Future Together
+            </h1>
+            <p className='text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed'>
+                Seeking impactful opportunities and meaningful collaborations. Let’s bring innovative ideas to life.
+            </p>
+        </motion.div>
     </motion.div>
 ));
 Header.displayName = 'Header';
-
-// Features Section Component
-const Features = memo(() => (
-    <motion.div
-        className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-16'
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2 }}
-    >
-        {features.map((feature, index) => (
-            <div
-                key={index}
-                className='bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center'
-            >
-                <CheckCircle className='w-6 h-6 text-purple-600 mx-auto mb-2' />
-                <p className='text-sm font-medium text-gray-700'>{feature}</p>
-            </div>
-        ))}
-    </motion.div>
-));
-Features.displayName = 'Features';
 
 // Contact Info Item Component
 const ContactInfoItem = memo(({ item }) => (
@@ -57,9 +42,7 @@ const ContactInfoItem = memo(({ item }) => (
         </div>
         <div>
             <h3 className='font-medium text-gray-900'>{item.label}</h3>
-            <p
-                className={`text-gray-600 hover:text-${item.bg}-600 transition-colors`}
-            >
+            <p className={`text-gray-600 hover:text-${item.bg}-600 transition-colors`}>
                 {item.value}
             </p>
         </div>
@@ -67,46 +50,9 @@ const ContactInfoItem = memo(({ item }) => (
 ));
 ContactInfoItem.displayName = 'ContactInfoItem';
 
-// Testimonial Component
-const TestimonialCard = memo(({ testimonial }) => (
-    <motion.div
-        className='bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20'
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
-    >
-        <div className='flex items-start space-x-4'>
-            <div className='w-10 h-10 rounded-full bg-gradient-to-r from-purple-400 to-indigo-400 flex items-center justify-center text-white font-medium'>
-                {testimonial.name[0]}
-            </div>
-            <div className='flex-1'>
-                <div className='flex items-center justify-between'>
-                    <div>
-                        <p className='font-medium text-gray-900'>
-                            {testimonial.name}
-                        </p>
-                        <p className='text-sm text-gray-600'>
-                            {testimonial.role} at {testimonial.company}
-                        </p>
-                    </div>
-                    <div className='flex items-center space-x-1'>
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star
-                                key={i}
-                                className='w-4 h-4 fill-yellow-400 text-yellow-400'
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p className='text-gray-700 mt-4'>{testimonial.text}</p>
-    </motion.div>
-));
-TestimonialCard.displayName = 'TestimonialCard';
-
 // Form Input Component
-const FormInput = memo(({ field, register }) => (
-    <motion.div whileHover={{ scale: 1.01 }}>
+const FormInput = memo(({ field }) => (
+    <motion.div whileHover={{ scale: 1.01 }} className="w-full">
         <label
             htmlFor={field.id}
             className='block text-sm font-medium text-gray-700 mb-2'
@@ -117,9 +63,8 @@ const FormInput = memo(({ field, register }) => (
             type={field.type}
             id={field.id}
             name={field.name}
-            className='block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
+            className='block w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-gray-200 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
             placeholder={field.placeholder}
-            {...register}
         />
     </motion.div>
 ));
@@ -135,7 +80,7 @@ const SubmitButton = memo(({ isHovered, setIsHovered }) => (
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
     >
-        <span>Send Message</span>
+        <span className="text-lg">Send Message</span>
         <motion.div
             animate={isHovered ? { x: 5 } : { x: 0 }}
             transition={{ duration: 0.2 }}
@@ -145,6 +90,45 @@ const SubmitButton = memo(({ isHovered, setIsHovered }) => (
     </motion.button>
 ));
 SubmitButton.displayName = 'SubmitButton';
+
+// Skill Card Component
+const SkillCard = memo(({ skill }) => (
+    <motion.div
+        className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.3 }}
+    >
+        <div className="flex items-start space-x-4">
+            <div className={`w-12 h-12 rounded-xl bg-${skill.color}-100 flex items-center justify-center`}>
+                <skill.icon className={`w-6 h-6 text-${skill.color}-600`} />
+            </div>
+            <div className="flex-1">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{skill.category}</h3>
+                <div className="flex flex-wrap gap-2 items-start">
+                    {skill.skills.map((item, index) => (
+                        <span 
+                            key={index}
+                            className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-${skill.color}-50 text-${skill.color}-700 border border-${skill.color}-100`}
+                        >
+                            {item}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </motion.div>
+));
+SkillCard.displayName = 'SkillCard';
+
+// Skills Showcase Component
+const SkillsShowcase = memo(() => (
+    <div className="grid gap-6">
+        {skills.map((skill, index) => (
+            <SkillCard key={index} skill={skill} />
+        ))}
+    </div>
+));
+SkillsShowcase.displayName = 'SkillsShowcase';
 
 // Contact Info Section
 const contactInfo = [
@@ -175,14 +159,14 @@ const formFields = [
         name: 'user_name',
         label: 'Name',
         type: 'text',
-        placeholder: 'Name',
+        placeholder: 'Your full name',
     },
     {
         id: 'user_email',
         name: 'user_email',
         label: 'Email',
         type: 'email',
-        placeholder: 'example@email.com',
+        placeholder: 'you@example.com',
     },
 ];
 
@@ -235,20 +219,34 @@ const ContactPage = () => {
         >
             <div className='h-full overflow-scroll no-scrollbar'>
                 <div className='p-4 md:p-8 lg:p-12 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
-                    <div className='mx-auto'>
+                    <div className='max-w-7xl mx-auto'>
                         <Header />
-                        <Features />
 
-                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16'>
-                            {/* Left Column - Contact Info & Testimonials */}
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
+                            {/* Left Column - Skills */}
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1.2 }}
+                                transition={{ delay: 0.6 }}
+                                className='space-y-8'
+                            >
+                                <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+                                    <h2 className='text-2xl font-bold text-gray-900 mb-8'>
+                                        Technical Expertise
+                                    </h2>
+                                    <SkillsShowcase />
+                                </div>
+                            </motion.div>
+
+                            {/* Right Column - Contact Info & Form */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.6 }}
                                 className='space-y-8'
                             >
                                 {/* Contact Info Card */}
-                                <div className='bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'>
+                                <div className='bg-white/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'>
                                     <h2 className='text-2xl font-bold text-gray-900 mb-6'>
                                         Get in Touch
                                     </h2>
@@ -262,43 +260,26 @@ const ContactPage = () => {
                                     </div>
                                 </div>
 
-                                {/* Testimonials */}
-                                <div className='space-y-4'>
-                                    {testimonials.map((testimonial, index) => (
-                                        <TestimonialCard
-                                            key={index}
-                                            testimonial={testimonial}
-                                        />
-                                    ))}
-                                </div>
-                            </motion.div>
-
-                            {/* Right Column - Contact Form */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1.2 }}
-                                className='relative'
-                            >
+                                {/* Contact Form */}
                                 <form
                                     ref={form}
                                     onSubmit={handleSubmit}
-                                    className='bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'
+                                    className='bg-white/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20'
                                 >
                                     <h2 className='text-2xl font-bold text-gray-900 mb-6'>
-                                        Send Us a Message
+                                        Send a Message
                                     </h2>
                                     <div className='space-y-6'>
-                                        {formFields.map(field => (
-                                            <FormInput
-                                                key={field.id}
-                                                field={field}
-                                            />
-                                        ))}
+                                        <div className="grid grid-cols-1 gap-6">
+                                            {formFields.map(field => (
+                                                <FormInput
+                                                    key={field.id}
+                                                    field={field}
+                                                />
+                                            ))}
+                                        </div>
 
-                                        <motion.div
-                                            whileHover={{ scale: 1.01 }}
-                                        >
+                                        <motion.div whileHover={{ scale: 1.01 }}>
                                             <label
                                                 htmlFor='message'
                                                 className='block text-sm font-medium text-gray-700 mb-2'
@@ -309,8 +290,8 @@ const ContactPage = () => {
                                                 id='message'
                                                 name='user_message'
                                                 rows={6}
-                                                className='block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
-                                                placeholder='Tell us about your project...'
+                                                className='block w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-gray-200 rounded-lg shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200 hover:border-purple-300'
+                                                placeholder='Tell me about your project...'
                                                 disabled={isSubmitting}
                                             />
                                         </motion.div>
