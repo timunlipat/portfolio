@@ -5,12 +5,19 @@ import { useState } from 'react';
 import Image from 'next/image';
 import NavLink from './NavLink';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SOCIAL_LINKS } from '../../constants';
 
 const links = [
     { url: '/', title: 'Home' },
     { url: '/about', title: 'About' },
     { url: '/portfolio', title: 'Portfolio' },
     { url: '/contact', title: 'Contact' },
+];
+
+const socialIcons = [
+    { href: SOCIAL_LINKS.GITHUB, src: '/github.png', alt: 'GitHub Icon' },
+    { href: SOCIAL_LINKS.TWITTER, src: '/x.png', alt: 'X (Twitter) Icon' },
+    { href: SOCIAL_LINKS.LINKEDIN, src: '/linkedin.png', alt: 'LinkedIn Icon' },
 ];
 
 const Navbar = () => {
@@ -89,9 +96,11 @@ const Navbar = () => {
                     href='/'
                     className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center'
                 >
-                    <span className='text-white mr-1'>Zamil</span>
+                    <span className='w-12 h-8 rounded bg-black flex items-center justify-center text-white mr-1'>
+                        Zamil
+                    </span>
                     <span className='w-12 h-8 rounded bg-white text-black flex items-center justify-center'>
-                        Tech
+                        Dev
                     </span>
                 </Link>
             </div>
@@ -105,24 +114,21 @@ const Navbar = () => {
 
             {/* Social */}
             <div className='hidden md:flex gap-4 w-1/3 justify-end'>
-                <Link href='#'>
-                    <Image src='/github.png' alt='' width={24} height={24} />
-                </Link>
-                <Link href='#'>
-                    <Image src='/dribbble.png' alt='' width={24} height={24} />
-                </Link>
-                <Link href='#'>
-                    <Image src='/instagram.png' alt='' width={24} height={24} />
-                </Link>
-                <Link href='#'>
-                    <Image src='/facebook.png' alt='' width={24} height={24} />
-                </Link>
-                <Link href='#'>
-                    <Image src='/pinterest.png' alt='' width={24} height={24} />
-                </Link>
-                <Link href='#'>
-                    <Image src='/linkedin.png' alt='' width={24} height={24} />
-                </Link>
+                {socialIcons.map(icon => (
+                    <Link
+                        key={icon.alt}
+                        href={icon.href}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        <Image
+                            src={icon.src}
+                            alt={icon.alt}
+                            width={24}
+                            height={24}
+                        />
+                    </Link>
+                ))}
             </div>
 
             {/* Menu Button */}
