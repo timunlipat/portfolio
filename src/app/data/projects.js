@@ -2,15 +2,9 @@ export const projects = [
     {
         id: 1,
         color: 'from-red-300 to-indigo-300',
-        title: 'DapurSegar',
-        tech: [
-            'Next.js',
-            'Tailwind CSS',
-            'React',
-            'Radix UI',
-            'Shadcn/ui',
-        ],
-        desc: 'DapurSegar is a custom ecommerce website I am developing from scratch for buying fresh groceries and market goods. The front-end is being built with Next.js for server-side rendering and optimizations, Tailwind CSS for styling, and Radix UI components for accessible UI. Key features currently include product listings, filters, shopping cart, and checkout. While still a work in progress with more enhancements planned, the aim is to create a high-quality, performant ecommerce site that will connect consumers with the best offerings of traditional markets in a modern digital experience.',
+        title: 'Ecommerce Website',
+        tech: ['Next.js', 'Tailwind CSS', 'React', 'Radix UI', 'Shadcn/ui'],
+        desc: 'A custom ecommerce website for buying fresh groceries and market goods. The front-end is being built with Next.js for server-side rendering and optimizations, Tailwind CSS for styling, and Radix UI components for accessible UI. Key features currently include product listings, filters, shopping cart, and checkout. While still a work in progress with more enhancements planned, the aim is to create a high-quality, performant ecommerce site that will connect consumers with the best offerings of traditional markets in a modern digital experience.',
         images: [
             '/projects/project1/1.png',
             '/projects/project1/2.png',
@@ -61,7 +55,7 @@ export const projects = [
             'Cloudinary',
             'Leaflet Maps',
         ],
-        desc: 'An Airbnb-inspired full-stack application developed while following a comprehensive tutorial. It features secure user authentication, property listings with image uploads, and real-time bookings. While the project began as a learning exercise, I adapted and expanded on the tutorial to deepen my understanding of Next.js, Prisma, and server-side rendering.',
+        desc: 'An Airbnb-inspired full-stack application developed from scratch by following a step-by-step tutorial. It features secure user authentication, property listings with image uploads, and real-time bookings. While I initially followed the tutorial closely, I made several modifications and improvements to deepen my understanding of Next.js, Prisma, and server-side rendering.',
         images: [
             '/projects/project3/1.png',
             '/projects/project3/2.png',
@@ -95,27 +89,5 @@ export const projects = [
         ],
         link: 'https://duomingo.vercel.app/',
         github: 'https://github.com/timunlipat/duomingo',
-    },
-    {
-        id: 5,
-        color: 'from-teal-300 to-purple-300',
-        title: 'Portfolio Website',
-        tech: [
-            'Next.js',
-            'TypeScript',
-            'Three.js',
-            'React Three Fiber',
-            'Tailwind CSS',
-            'Lottie Animations',
-            'Sentry',
-        ],
-        desc: 'A personal portfolio website built with advanced front-end techniques learned through a tutorial. The project includes immersive 3D animations using Three.js and React Three Fiber, showcasing both technical skills and creative design. This experience refined my ability to create visually engaging user interfaces.',
-        images: [
-            '/projects/project5/1.png',
-            '/projects/project5/2.png',
-            '/projects/project5/3.png',
-        ],
-        link: 'https://portfolio-zamil-2.vercel.app/',
-        github: 'https://github.com/timunlipat/portfolio-2',
     },
 ];

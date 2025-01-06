@@ -13,7 +13,7 @@ const PortfolioPage = () => {
         smooth: 0.5, // Reduced smooth scrolling value for better performance
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ['0%', '-83%'], {
+    const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%'], {
         clamp: true, // Prevent overscroll calculations
     });
 

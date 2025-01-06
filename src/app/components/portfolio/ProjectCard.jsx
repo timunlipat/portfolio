@@ -38,7 +38,7 @@ const ProjectCard = memo(({ item, index }) => {
                         Project {index + 1}
                     </motion.span>
                     <motion.h2
-                        className='text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-tight tracking-tight py-1'
+                        className='text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text leading-tight tracking-tight py-2'
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
@@ -56,7 +56,7 @@ const ProjectCard = memo(({ item, index }) => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         viewport={{ once: true }}
                     >
-                        <div className='relative overflow-hidden min-h-[280px] sm:min-h-[350px] rounded-xl sm:rounded-2xl will-change-transform'>
+                        <div className='relative overflow-hidden min-h-[280px] sm:min-h-[350px] will-change-transform'>
                             <ImageCarousel images={item.images} />
                         </div>
                         <div className='flex flex-nowrap gap-1.5 sm:gap-2 mt-2 sm:mt-4'>
