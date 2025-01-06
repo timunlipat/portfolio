@@ -12,7 +12,7 @@ export const projects = [
             '/projects/project1/4.png',
         ],
         link: 'https://dapur-segar.vercel.app/',
-        github: 'https://github.com/timunlipat/dapur-segar',
+        github: 'https://github.com/zamil-aziz/dapur-segar',
     },
     {
         id: 2,
@@ -62,7 +62,7 @@ export const projects = [
             '/projects/project3/3.png',
         ],
         link: 'https://milbnb.vercel.app/',
-        github: 'https://github.com/timunlipat/milbnb',
+        github: 'https://github.com/zamil-aziz/milbnb',
     },
     {
         id: 4,
@@ -88,6 +88,6 @@ export const projects = [
             '/projects/project4/5.png',
         ],
         link: 'https://duomingo.vercel.app/',
-        github: 'https://github.com/timunlipat/duomingo',
+        github: 'https://github.com/zamil-aziz/duomingo',
     },
 ];
