@@ -5,7 +5,7 @@
 export const CONTACT_EMAIL = 'your.email@example.com';
 
 export const SOCIAL_LINKS = {
-    GITHUB: 'https://github.com/timunlipat',
+    GITHUB: 'https://github.com/zamil-aziz',
     TWITTER: 'https://x.com/zamilaziz2',
     LINKEDIN: 'https://www.linkedin.com/in/zamil-aziz/',
 };
