@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from '../../components/contact/Header';
 import { ContactInfo } from '../../components/contact/ContactInfo';
-import { SkillsShowcase } from '../../components/contact/SkillsShowcase';
 import { ContactForm } from '../../components/contact/ContactForm';
 import Toast from '../../components/ui/Toast';
 
@@ -23,17 +22,22 @@ export default function ContactPage() {
                         <Header />
 
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
-                            {/* Left Column - Skills */}
-                            <SkillsShowcase />
-
-                            {/* Right Column - Contact Info & Form */}
+                            {/* left */}
                             <motion.div
-                                initial={{ opacity: 0, x: 50 }}
+                                initial={{ opacity: 0, x: -100 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 1 }}
                                 className='space-y-8'
                             >
                                 <ContactInfo />
+                            </motion.div>
+                            {/* right */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 100 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 1 }}
+                                className='space-y-8'
+                            >
                                 <ContactForm setToast={setToast} />
                             </motion.div>
                         </div>
