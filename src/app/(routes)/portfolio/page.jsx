@@ -19,10 +19,7 @@ const PortfolioPage = () => {
 
     // Memoize project cards to prevent unnecessary re-renders
     const projectCards = useMemo(
-        () =>
-            projects.map((item, index) => (
-                <ProjectCard key={item.id} item={item} index={index} />
-            )),
+        () => projects.map((item, index) => <ProjectCard key={item.id} item={item} index={index} />),
         [] // Empty dependency array since projects are static
     );
 
@@ -39,10 +36,7 @@ const PortfolioPage = () => {
 
                 {/* Horizontal Scroll Gallery */}
                 <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
-                    <motion.div
-                        style={{ x }}
-                        className='flex will-change-transform'
-                    >
+                    <motion.div style={{ x }} className='flex will-change-transform'>
                         {/* Initial gradient panel */}
                         <div className='h-[120vh] w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300' />
 

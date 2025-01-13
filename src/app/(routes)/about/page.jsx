@@ -10,16 +10,12 @@ const ExperienceItem = ({ data, index }) => {
 
     const Details = () => (
         <>
-            <div className='bg-white p-2 sm:p-3 font-semibold rounded-lg w-fit'>
-                {title}
-            </div>
+            <div className='bg-white p-2 sm:p-3 font-semibold rounded-lg w-fit'>{title}</div>
             <div className='py-1 text-sm italic'>{description}</div>
             <div className='py-1 text-red-400 text-xs sm:sm font-semibold whitespace-nowrap overflow-hidden text-overflow-ellipsis'>
                 {date}
             </div>
-            <div className='p-1 sm:p-2 rounded bg-white text-xs sm:text-sm font-semibold w-fit'>
-                {company}
-            </div>
+            <div className='p-1 sm:p-2 rounded bg-white text-xs sm:text-sm font-semibold w-fit'>{company}</div>
         </>
     );
 
@@ -62,16 +58,8 @@ const About = () => {
     });
 
     return (
-        <motion.div
-            className='h-full'
-            initial={{ y: '-200vh' }}
-            animate={{ y: '0%' }}
-            transition={{ duration: 1 }}
-        >
-            <div
-                className='h-full overflow-scroll no-scrollbar lg:flex'
-                ref={containerRef}
-            >
+        <motion.div className='h-full' initial={{ y: '-200vh' }} animate={{ y: '0%' }} transition={{ duration: 1 }}>
+            <div className='h-full overflow-scroll no-scrollbar lg:flex' ref={containerRef}>
                 <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:1/2'>
                     {/* Biography Section */}
                     <div className='flex flex-col gap-12 justify-center'>
@@ -81,10 +69,7 @@ const About = () => {
                     </div>
 
                     {/* Skills Section */}
-                    <div
-                        className='flex flex-col gap-12 justify-center'
-                        ref={skillRef}
-                    >
+                    <div className='flex flex-col gap-12 justify-center' ref={skillRef}>
                         <motion.h1
                             initial={{ x: '-300px' }}
                             animate={isSkillRefInView ? { x: 0 } : {}}
@@ -111,10 +96,7 @@ const About = () => {
                     </div>
 
                     {/* Experience Section */}
-                    <div
-                        className='flex flex-col gap-12 justify-center pb-48'
-                        ref={experienceRef}
-                    >
+                    <div className='flex flex-col gap-12 justify-center pb-48' ref={experienceRef}>
                         <motion.h1
                             initial={{ x: '-300px' }}
                             animate={isExperienceRefInView ? { x: 0 } : {}}
@@ -123,16 +105,9 @@ const About = () => {
                         >
                             EXPERIENCE
                         </motion.h1>
-                        <motion.div
-                            initial={{ x: '-300px' }}
-                            animate={isExperienceRefInView ? { x: 0 } : {}}
-                        >
+                        <motion.div initial={{ x: '-300px' }} animate={isExperienceRefInView ? { x: 0 } : {}}>
                             {experienceData.map((experience, index) => (
-                                <ExperienceItem
-                                    key={index}
-                                    data={experience}
-                                    index={index}
-                                />
+                                <ExperienceItem key={index} data={experience} index={index} />
                             ))}
                         </motion.div>
                     </div>

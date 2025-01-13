@@ -12,3 +12,20 @@
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
+/* Smooth Scrolling Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Custom scroll speed */
+.scroll-smooth {
+    scroll-behavior: smooth;
+    transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

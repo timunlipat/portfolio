@@ -5,8 +5,14 @@ import HeroSection from './components/hero-section/HeroSection';
 const Page = () => {
     return (
         <>
-            <HeroSection />
-            <About />
+            <div className='h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth'>
+                <div className='snap-start h-screen'>
+                    <HeroSection />
+                </div>
+                <div className='snap-start h-screen'>
+                    <About />
+                </div>
+            </div>
             <PortfolioPage />
         </>
     );
