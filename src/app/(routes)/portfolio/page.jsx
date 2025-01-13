@@ -19,7 +19,7 @@ const PortfolioPage = () => {
 
     // Memoize project cards to prevent unnecessary re-renders
     const projectCards = useMemo(
-        () => projects.map((item, index) => <ProjectCard key={item.id} item={item} index={index} />),
+        () => projects.map((item, index) => <ProjectCard key={item.id || index} item={item} index={index} />),
         [] // Empty dependency array since projects are static
     );
 

@@ -27,5 +27,31 @@ html {
 /* Custom scroll speed */
 .scroll-smooth {
     scroll-behavior: smooth;
-    transition: all 4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Gradient Animation */
+@keyframes gradient {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-gradient {
+    background: linear-gradient(
+        270deg,
+        #bfdbfe,
+        /* blue-200 */ #e9d5ff,
+        /* purple-200 */ #fecdd3,
+        /* pink-200 */ #93c5fd,
+        /* blue-300 */ #d8b4fe,
+        /* purple-300 */ #fda4af /* pink-300 */
+    );
+    background-size: 300% 100%;
+    animation: gradient 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transition: all 0.5s ease-in-out;
 }
