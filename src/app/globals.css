@@ -44,14 +44,14 @@ html {
 .animate-gradient {
     background: linear-gradient(
         270deg,
-        #bfdbfe,
-        /* blue-200 */ #e9d5ff,
-        /* purple-200 */ #fecdd3,
-        /* pink-200 */ #93c5fd,
-        /* blue-300 */ #d8b4fe,
-        /* purple-300 */ #fda4af /* pink-300 */
+        #dbeafe,
+        /* blue-100 */ #f3e8ff,
+        /* purple-100 */ #ffe4e6,
+        /* pink-100 */ #e2e8f0,
+        /* slate-200 */ #f1f5f9,
+        /* slate-100 */ #dbeafe /* blue-100 */
     );
     background-size: 300% 100%;
-    animation: gradient 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: gradient 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     transition: all 0.5s ease-in-out;
 }
