@@ -55,26 +55,14 @@ const CallToAction = () => {
                     animate='animate'
                 >
                     <defs>
-                        <path
-                            id='circlePath'
-                            d='M 150, 150 m -70, 0 a 70,70 0 0,1 140,0 a 70,70 0 0,1 -140,0'
-                        />
-                        <linearGradient
-                            id='textGradient'
-                            x1='0%'
-                            y1='0%'
-                            x2='100%'
-                            y2='100%'
-                        >
+                        <path id='circlePath' d='M 150, 150 m -70, 0 a 70,70 0 0,1 140,0 a 70,70 0 0,1 -140,0' />
+                        <linearGradient id='textGradient' x1='0%' y1='0%' x2='100%' y2='100%'>
                             <stop offset='0%' stopColor='#818cf8' />
                             <stop offset='100%' stopColor='#8b5cf6' />
                         </linearGradient>
                     </defs>
                     <text fill='url(#textGradient)'>
-                        <textPath
-                            xlinkHref='#circlePath'
-                            className='text-xl font-medium tracking-wider'
-                        >
+                        <textPath xlinkHref='#circlePath' className='text-xl font-medium tracking-wider'>
                             ✦ Full-Stack Developer ✦ UI/UX Designer ✦
                         </textPath>
                     </text>
@@ -87,9 +75,7 @@ const CallToAction = () => {
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <span className='text-white font-medium text-lg md:text-xl'>
-                                Let&apos;s Talk
-                            </span>
+                            <span className='text-white font-medium text-lg md:text-xl'>Contact me</span>
                             <motion.div
                                 className='absolute inset-0 bg-white rounded-full'
                                 initial={{ opacity: 0 }}
